@@ -1,0 +1,22 @@
+<idea-plugin>
+    <id>ris58h.androidkeymaps.intellij</id>
+
+    <name>Android Keymap Files Support</name>
+
+    <vendor email="ris58h@gmail.com" url="https://github.com/ris58h">Ilya Rodionov</vendor>
+
+    <description><![CDATA[
+    Syntax highlighting for Android Keymaps: key layouts (.kl), key character maps (.kcm),
+   input device configurations (.idc).
+  ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType
+                name="AndroidInputDeviceConfiguration"
+                implementationClass="ris58h.androidkeymaps.intellij.idc.InputDeviceConfigurationFileType"
+                language="AndroidInputDeviceConfiguration"
+                extensions="idc"/>
+    </extensions>
+</idea-plugin>
