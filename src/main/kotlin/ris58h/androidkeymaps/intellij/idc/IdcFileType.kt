@@ -3,7 +3,7 @@ package ris58h.androidkeymaps.intellij.idc
 import com.intellij.openapi.fileTypes.LanguageFileType
 import javax.swing.Icon
 
-object InputDeviceConfigurationFileType : LanguageFileType(InputDeviceConfigurationLanguage) {
+object IdcFileType : LanguageFileType(IdcLanguage) {
     override fun getName(): String = "AndroidInputDeviceConfiguration"
 
     override fun getDisplayName(): String = "Android Input Device Configuration"

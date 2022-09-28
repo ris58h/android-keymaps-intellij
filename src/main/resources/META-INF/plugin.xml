@@ -15,8 +15,11 @@
     <extensions defaultExtensionNs="com.intellij">
         <fileType
                 name="AndroidInputDeviceConfiguration"
-                implementationClass="ris58h.androidkeymaps.intellij.idc.InputDeviceConfigurationFileType"
+                implementationClass="ris58h.androidkeymaps.intellij.idc.IdcFileType"
                 language="AndroidInputDeviceConfiguration"
                 extensions="idc"/>
+        <lang.parserDefinition
+                language="AndroidInputDeviceConfiguration"
+                implementationClass="ris58h.androidkeymaps.intellij.idc.IdcParserDefinition"/>
     </extensions>
 </idea-plugin>

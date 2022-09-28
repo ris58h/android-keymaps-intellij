@@ -1,0 +1,20 @@
+{
+  parserClass="ris58h.androidkeymaps.intellij.idc.parser.IdcParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Idc"
+  psiImplClassSuffix="Impl"
+  psiPackage="ris58h.androidkeymaps.intellij.idc.psi"
+  psiImplPackage="ris58h.androidkeymaps.intellij.idc.psi.impl"
+
+  elementTypeHolderClass="ris58h.androidkeymaps.intellij.idc.psi.IdcTypes"
+  elementTypeClass="ris58h.androidkeymaps.intellij.idc.psi.IdcElementType"
+  tokenTypeClass="ris58h.androidkeymaps.intellij.idc.psi.IdcTokenType"
+}
+
+idcFile ::= item_*
+
+private item_ ::= (property|COMMENT|CRLF)
+
+property ::= (KEY SEPARATOR VALUE)
