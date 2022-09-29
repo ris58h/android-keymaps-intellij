@@ -21,5 +21,8 @@
         <lang.parserDefinition
                 language="AndroidInputDeviceConfiguration"
                 implementationClass="ris58h.androidkeymaps.intellij.idc.IdcParserDefinition"/>
+        <lang.syntaxHighlighterFactory
+                language="AndroidInputDeviceConfiguration"
+                implementationClass="ris58h.androidkeymaps.intellij.idc.IdcSyntaxHighlighterFactory"/>
     </extensions>
 </idea-plugin>
