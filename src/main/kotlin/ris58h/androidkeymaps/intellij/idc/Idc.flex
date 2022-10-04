@@ -16,6 +16,11 @@ import com.intellij.psi.TokenType;
 %eof{  return;
 %eof}
 
+//TODO: take a look at
+//  https://source.android.com/docs/core/interaction/input/input-device-configuration-files
+//  https://android.googlesource.com/platform/frameworks/base.git/+/master/tools/validatekeymaps/Main.cpp
+//  https://android.googlesource.com/platform/frameworks/native/+/master/libs/input/PropertyMap.cpp
+//  https://android.googlesource.com/platform/system/core/+/master/libutils/include/utils/Tokenizer.h
 CRLF=\R
 //TODO check whitespace chars
 WHITE_SPACE=[\ \n\t\f]
