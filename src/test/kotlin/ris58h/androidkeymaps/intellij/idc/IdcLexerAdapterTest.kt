@@ -5,12 +5,71 @@ import org.junit.Test
 
 class IdcLexerAdapterTest {
     @Test
-    fun testSimple() {
-        doTest("xxx=yyy", arrayOf(
-            "IdcTokenType.KEY", "xxx",
-            "IdcTokenType.SEPARATOR", "=",
-            "IdcTokenType.VALUE", "yyy",
-        ))
+    fun testSingleLineWithoutSpaces() {
+        doTest(
+            "xxx=yyy",
+            arrayOf(
+                "IdcTokenType.KEY", "xxx",
+                "IdcTokenType.SEPARATOR", "=",
+                "IdcTokenType.VALUE", "yyy",
+            )
+        )
+    }
+
+    @Test
+    fun testMultipleLinesWithoutSpaces() {
+        doTest(
+            """
+                xxx=yyy
+                aaa=bbb
+            """.trimIndent(),
+            arrayOf(
+                "IdcTokenType.KEY", "xxx",
+                "IdcTokenType.SEPARATOR", "=",
+                "IdcTokenType.VALUE", "yyy",
+                "WHITE_SPACE", "\n",
+                "IdcTokenType.KEY", "aaa",
+                "IdcTokenType.SEPARATOR", "=",
+                "IdcTokenType.VALUE", "bbb",
+            )
+        )
+    }
+
+    @Test
+    fun testSingleLineWithSpaces() {
+        doTest(
+            "xxx = yyy",
+            arrayOf(
+                "IdcTokenType.KEY", "xxx",
+                "WHITE_SPACE", " ",
+                "IdcTokenType.SEPARATOR", "=",
+                "WHITE_SPACE", " ",
+                "IdcTokenType.VALUE", "yyy",
+            )
+        )
+    }
+
+    @Test
+    fun testMultipleLinesWithSpaces() {
+        doTest(
+            """
+                xxx = yyy
+                aaa = bbb
+            """.trimIndent(),
+            arrayOf(
+                "IdcTokenType.KEY", "xxx",
+                "WHITE_SPACE", " ",
+                "IdcTokenType.SEPARATOR", "=",
+                "WHITE_SPACE", " ",
+                "IdcTokenType.VALUE", "yyy",
+                "WHITE_SPACE", "\n",
+                "IdcTokenType.KEY", "aaa",
+                "WHITE_SPACE", " ",
+                "IdcTokenType.SEPARATOR", "=",
+                "WHITE_SPACE", " ",
+                "IdcTokenType.VALUE", "bbb",
+            )
+        )
     }
 
     private fun doTest(text: String, expectedTokens: Array<String>) {
