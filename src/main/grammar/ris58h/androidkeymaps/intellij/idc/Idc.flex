@@ -22,14 +22,14 @@ import com.intellij.psi.TokenType;
 //  https://android.googlesource.com/platform/system/core/+/master/libutils/include/utils/Tokenizer.h
 CRLF=\R
 //TODO check whitespace chars
-WHITE_SPACE=[\ \n\t\f]
+WHITE_SPACE=[\ \t\r]
 END_OF_LINE_COMMENT=("#")[^\r\n]*
 //TODO check unsupported chars in keys
-KEY_CHARACTER=[^:=\ \n\t\f\\] | "\\ "
+KEY_CHARACTER=[^=\ \n\t\r]
 SEPARATOR=[=]
 //TODO check unsupported chars in values
-FIRST_VALUE_CHARACTER=[^ \n\f\\] | "\\"{CRLF} | "\\".
-VALUE_CHARACTER=[^\n\f\\] | "\\"{CRLF} | "\\".
+FIRST_VALUE_CHARACTER=[^ \n]
+VALUE_CHARACTER=[^\n]
 
 %state WAITING_VALUE
 
