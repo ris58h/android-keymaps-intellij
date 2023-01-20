@@ -15,6 +15,6 @@
 
 idcFile ::= item_*
 
-private item_ ::= (property|COMMENT|CRLF)
+private item_ ::= (property|COMMENT)
 
 property ::= (KEY SEPARATOR VALUE)
