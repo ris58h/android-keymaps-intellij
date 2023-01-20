@@ -27,8 +27,7 @@ END_OF_LINE_COMMENT=("#")[^\r\n]*
 KEY_CHARACTER=[^=\ \n\t\r]
 SEPARATOR=[=]
 //TODO check unsupported chars in values
-FIRST_VALUE_CHARACTER=[^ \n]
-VALUE_CHARACTER=[^\n]
+VALUE_CHARACTER=[^\ \n]
 
 %state WAITING_VALUE
 
@@ -44,7 +43,7 @@ VALUE_CHARACTER=[^\n]
 
 <WAITING_VALUE> {WHITE_SPACE}+                              { yybegin(WAITING_VALUE); return TokenType.WHITE_SPACE; }
 
-<WAITING_VALUE> {FIRST_VALUE_CHARACTER}{VALUE_CHARACTER}*   { yybegin(YYINITIAL); return IdcTypes.VALUE; }
+<WAITING_VALUE> {VALUE_CHARACTER}*                          { yybegin(YYINITIAL); return IdcTypes.VALUE; }
 
 ({EOL}|{WHITE_SPACE})+                                      { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
 
