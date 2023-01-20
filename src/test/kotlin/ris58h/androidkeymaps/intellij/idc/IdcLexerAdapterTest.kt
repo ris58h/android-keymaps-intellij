@@ -72,6 +72,35 @@ class IdcLexerAdapterTest {
         )
     }
 
+    @Test
+    fun testMultipleLinesWithComments() {
+        doTest(
+            """
+                # Comment line 1
+                xxx = yyy
+                # Comment line 2
+                aaa = bbb
+            """.trimIndent(),
+            arrayOf(
+                "IdcTokenType.COMMENT", "# Comment line 1",
+                "WHITE_SPACE", "\n",
+                "IdcTokenType.KEY", "xxx",
+                "WHITE_SPACE", " ",
+                "IdcTokenType.SEPARATOR", "=",
+                "WHITE_SPACE", " ",
+                "IdcTokenType.VALUE", "yyy",
+                "WHITE_SPACE", "\n",
+                "IdcTokenType.COMMENT", "# Comment line 2",
+                "WHITE_SPACE", "\n",
+                "IdcTokenType.KEY", "aaa",
+                "WHITE_SPACE", " ",
+                "IdcTokenType.SEPARATOR", "=",
+                "WHITE_SPACE", " ",
+                "IdcTokenType.VALUE", "bbb",
+            )
+        )
+    }
+
     private fun doTest(text: String, expectedTokens: Array<String>) {
         val lexer = IdcLexerAdapter()
         lexer.start(text)
