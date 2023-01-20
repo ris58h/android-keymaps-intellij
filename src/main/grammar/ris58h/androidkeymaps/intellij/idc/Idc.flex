@@ -43,7 +43,7 @@ VALUE_CHARACTER=[^\ \n]
 
 <WAITING_VALUE> {WHITE_SPACE}+                              { yybegin(WAITING_VALUE); return TokenType.WHITE_SPACE; }
 
-<WAITING_VALUE> {VALUE_CHARACTER}*                          { yybegin(YYINITIAL); return IdcTypes.VALUE; }
+<WAITING_VALUE> {VALUE_CHARACTER}+                          { yybegin(YYINITIAL); return IdcTypes.VALUE; }
 
 ({EOL}|{WHITE_SPACE})+                                      { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
 
