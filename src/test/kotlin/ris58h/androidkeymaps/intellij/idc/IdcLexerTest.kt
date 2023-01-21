@@ -14,6 +14,10 @@ class IdcLexerTest : LexerTestCase() {
         doFileTest("idc")
     }
 
+    fun testHashes() {
+        doFileTest()
+    }
+
     fun testMissingEOL() {
         doFileTest()
     }

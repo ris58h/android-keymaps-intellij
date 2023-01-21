@@ -8,6 +8,10 @@ class IdcParsingTest : ParsingTestCase("", "idc", true, IdcParserDefinition()) {
         doTest(true)
     }
 
+    fun testHashes() {
+        doFileTest()
+    }
+
     fun testMissingEOL() {
         doFileTest()
     }
