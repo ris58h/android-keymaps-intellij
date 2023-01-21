@@ -24,5 +24,8 @@
         <lang.syntaxHighlighterFactory
                 language="AndroidInputDeviceConfiguration"
                 implementationClass="ris58h.androidkeymaps.intellij.idc.IdcSyntaxHighlighterFactory"/>
+        <annotator
+                language="AndroidInputDeviceConfiguration"
+                implementationClass="ris58h.androidkeymaps.intellij.idc.IdcAnnotator"/>
     </extensions>
 </idea-plugin>
