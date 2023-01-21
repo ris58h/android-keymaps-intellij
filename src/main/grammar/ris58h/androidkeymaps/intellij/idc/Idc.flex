@@ -15,18 +15,17 @@ import com.intellij.psi.TokenType;
 %eof{  return;
 %eof}
 
-//TODO: take a look at
-//  https://source.android.com/docs/core/interaction/input/input-device-configuration-files
-//  https://android.googlesource.com/platform/frameworks/base.git/+/master/tools/validatekeymaps/Main.cpp
-//  https://android.googlesource.com/platform/frameworks/native/+/master/libs/input/PropertyMap.cpp
-//  https://android.googlesource.com/platform/system/core/+/master/libutils/include/utils/Tokenizer.h
+/*
+    Input Device Configuration
+    https://source.android.com/docs/core/interaction/input/input-device-configuration-files
+    https://android.googlesource.com/platform/frameworks/native/+/master/libs/input/PropertyMap.cpp
+ */
+
 EOL=\n
 WHITE_SPACE=[\ \t\r]
 END_OF_LINE_COMMENT=("#")[^\r\n]*
-//TODO check unsupported chars in keys
 KEY_CHARACTER=[^=\ \n\t\r]
 SEPARATOR=[=]
-//TODO check unsupported chars in values
 VALUE_CHARACTER=[^\ \n]
 
 %state WAITING_VALUE
