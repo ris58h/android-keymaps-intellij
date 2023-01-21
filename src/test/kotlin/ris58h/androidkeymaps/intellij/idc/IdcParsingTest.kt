@@ -8,4 +8,8 @@ class IdcParsingTest : ParsingTestCase("", "idc", true, IdcParserDefinition()) {
     fun testSimple() {
         doTest(true)
     }
+
+    fun testMissingValue() {
+        doTest(true)
+    }
 }
