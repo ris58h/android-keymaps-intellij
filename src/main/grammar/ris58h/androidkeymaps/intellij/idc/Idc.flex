@@ -30,6 +30,7 @@ SEPARATOR=[=]
 VALUE_CHARACTER=[^\ \n]
 
 %state WAITING_VALUE
+%state WAITING_EOL
 
 %%
 
@@ -39,10 +40,14 @@ VALUE_CHARACTER=[^\ \n]
 
 <YYINITIAL> {SEPARATOR}                                     { yybegin(WAITING_VALUE); return IdcTypes.SEPARATOR; }
 
-<WAITING_VALUE> {EOL}({EOL}|{WHITE_SPACE})+                 { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
-
 <WAITING_VALUE> {WHITE_SPACE}+                              { yybegin(WAITING_VALUE); return TokenType.WHITE_SPACE; }
 
-<WAITING_VALUE> {VALUE_CHARACTER}+                          { yybegin(YYINITIAL); return IdcTypes.VALUE; }
+<WAITING_VALUE> {VALUE_CHARACTER}+                          { yybegin(WAITING_EOL); return IdcTypes.VALUE; }
+
+<WAITING_EOL> {WHITE_SPACE}+                                { yybegin(WAITING_EOL); return TokenType.WHITE_SPACE; }
+
+<WAITING_EOL> {EOL}({EOL}|{WHITE_SPACE})+                   { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
+
+<WAITING_EOL> [^\n\ \t\r]+                                  { yybegin(YYINITIAL); return TokenType.BAD_CHARACTER; }
 
 ({EOL}|{WHITE_SPACE})+                                      { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }

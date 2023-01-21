@@ -1,0 +1,17 @@
+Android Input Device Configuration file
+  IdcPropertyImpl(PROPERTY)
+    PsiElement(IdcTokenType.KEY)('a')
+    PsiErrorElement:IdcTokenType.SEPARATOR expected, got 'b'
+      <empty list>
+  PsiWhiteSpace('   ')
+  IdcPropertyImpl(PROPERTY)
+    PsiElement(IdcTokenType.KEY)('b')
+    PsiErrorElement:IdcTokenType.SEPARATOR expected, got 'c'
+      <empty list>
+  PsiWhiteSpace('\n')
+  IdcPropertyImpl(PROPERTY)
+    PsiElement(IdcTokenType.KEY)('c')
+    PsiWhiteSpace(' ')
+    PsiElement(IdcTokenType.SEPARATOR)('=')
+    PsiWhiteSpace(' ')
+    PsiElement(IdcTokenType.VALUE)('d')

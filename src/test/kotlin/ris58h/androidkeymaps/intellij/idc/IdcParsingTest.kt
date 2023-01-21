@@ -4,12 +4,27 @@ import com.intellij.testFramework.ParsingTestCase
 
 class IdcParsingTest : ParsingTestCase("", "idc", true, IdcParserDefinition()) {
     override fun getTestDataPath() = "src/test/testData/idc"
-
-    fun testSimple() {
+    private fun doFileTest() {
         doTest(true)
     }
 
+    fun testMissingEOL() {
+        doFileTest()
+    }
+
+    fun testMissingSeparator() {
+        doFileTest()
+    }
+
+    fun testMissingSeparatorAndValue() {
+        doFileTest()
+    }
+
     fun testMissingValue() {
-        doTest(true)
+        doFileTest()
+    }
+
+    fun testSimple() {
+        doFileTest()
     }
 }

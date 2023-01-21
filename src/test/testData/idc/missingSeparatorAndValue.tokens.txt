@@ -1,0 +1,7 @@
+IdcTokenType.KEY ('a')
+WHITE_SPACE ('\n')
+IdcTokenType.KEY ('c')
+WHITE_SPACE (' ')
+IdcTokenType.SEPARATOR ('=')
+WHITE_SPACE (' ')
+IdcTokenType.VALUE ('d')
