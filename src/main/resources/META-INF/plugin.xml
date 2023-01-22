@@ -44,5 +44,8 @@
         <lang.parserDefinition
                 language="AndroidKeyLayout"
                 implementationClass="ris58h.androidkeymaps.intellij.kl.KlParserDefinition"/>
+        <lang.syntaxHighlighterFactory
+                language="AndroidKeyLayout"
+                implementationClass="ris58h.androidkeymaps.intellij.kl.KlSyntaxHighlighterFactory"/>
     </extensions>
 </idea-plugin>

@@ -33,20 +33,20 @@ class IdcSyntaxHighlighter : SyntaxHighlighterBase() {
 
     override fun getTokenHighlights(tokenType: IElementType): Array<TextAttributesKey> {
         if (tokenType == IdcTypes.SEPARATOR) {
-            return SEPARATOR_KEYS;
+            return SEPARATOR_KEYS
         }
         if (tokenType == IdcTypes.KEY) {
-            return KEY_KEYS;
+            return KEY_KEYS
         }
         if (tokenType == IdcTypes.VALUE) {
-            return VALUE_KEYS;
+            return VALUE_KEYS
         }
         if (tokenType == IdcTypes.COMMENT) {
-            return COMMENT_KEYS;
+            return COMMENT_KEYS
         }
         if (tokenType == TokenType.BAD_CHARACTER) {
-            return BAD_CHAR_KEYS;
+            return BAD_CHAR_KEYS
         }
-        return EMPTY_KEYS;
+        return EMPTY_KEYS
     }
 }
