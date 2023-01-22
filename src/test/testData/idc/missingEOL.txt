@@ -4,10 +4,7 @@ Android Input Device Configuration file
     PsiWhiteSpace(' ')
     PsiElement(IdcTokenType.SEPARATOR)('=')
     PsiWhiteSpace(' ')
-    PsiElement(IdcTokenType.VALUE)('b')
-    PsiWhiteSpace(' ')
-    PsiErrorElement:'b2' unexpected
-      PsiElement(BAD_CHARACTER)('b2')
+    PsiElement(IdcTokenType.VALUE)('b b2')
   PsiWhiteSpace('\n')
   IdcPropertyImpl(PROPERTY)
     PsiElement(IdcTokenType.KEY)('c')
