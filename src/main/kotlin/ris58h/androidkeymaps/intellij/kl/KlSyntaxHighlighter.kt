@@ -15,8 +15,8 @@ class KlSyntaxHighlighter : SyntaxHighlighterBase() {
             TextAttributesKey.createTextAttributesKey("KL_KEYWORD", DefaultLanguageHighlighterColors.KEYWORD)
         val NUMBER: TextAttributesKey =
             TextAttributesKey.createTextAttributesKey("KL_NUMBER", DefaultLanguageHighlighterColors.NUMBER)
-        val IDENTIFIER: TextAttributesKey =
-            TextAttributesKey.createTextAttributesKey("KL_IDENTIFIER", DefaultLanguageHighlighterColors.IDENTIFIER)
+        val LABEL: TextAttributesKey =
+            TextAttributesKey.createTextAttributesKey("KL_LABEL", DefaultLanguageHighlighterColors.STRING)
         val COMMENT: TextAttributesKey =
             TextAttributesKey.createTextAttributesKey("KL_COMMENT", DefaultLanguageHighlighterColors.LINE_COMMENT)
         val BAD_CHARACTER: TextAttributesKey =
@@ -25,7 +25,7 @@ class KlSyntaxHighlighter : SyntaxHighlighterBase() {
         private val BAD_CHAR_KEYS = arrayOf(BAD_CHARACTER)
         private val KEYWORD_KEYS = arrayOf(KEYWORD)
         private val NUMBER_KEYS = arrayOf(NUMBER)
-        private val IDENTIFIER_KEYS = arrayOf(IDENTIFIER)
+        private val LABEL_KEYS = arrayOf(LABEL)
         private val COMMENT_KEYS = arrayOf(COMMENT)
         private val EMPTY_KEYS = arrayOf<TextAttributesKey>()
 
@@ -48,8 +48,8 @@ class KlSyntaxHighlighter : SyntaxHighlighterBase() {
         if (tokenType == KlTypes.NUMBER) {
             return NUMBER_KEYS
         }
-        if (tokenType == KlTypes.IDENTIFIER) {
-            return IDENTIFIER_KEYS
+        if (tokenType == KlTypes.LABEL) {
+            return LABEL_KEYS
         }
         if (tokenType == KlTypes.COMMENT) {
             return COMMENT_KEYS

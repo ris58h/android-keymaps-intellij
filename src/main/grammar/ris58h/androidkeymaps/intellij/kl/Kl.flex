@@ -25,7 +25,7 @@ EOL=\n
 WHITE_SPACE=[\ \t\r]
 END_OF_LINE_COMMENT=("#")[^\r\n]*
 NUMBER=(("0x")[0-9a-fA-F]*)|([0-9][^x][0-9]*)
-IDENTIFIER=[A-Z][A-Z_]*
+LABEL=[A-Z][A-Z_]*
 
 KEY_KEYWORD="key"
 USAGE_KEYWORD="usage"
@@ -40,7 +40,7 @@ FLAT_KEYWORD="flat"
 <YYINITIAL> {END_OF_LINE_COMMENT}                           { yybegin(YYINITIAL); return KlTypes.COMMENT; }
 
 <YYINITIAL> {NUMBER}                                        { yybegin(YYINITIAL); return KlTypes.NUMBER; }
-<YYINITIAL> {IDENTIFIER}                                    { yybegin(YYINITIAL); return KlTypes.IDENTIFIER; }
+<YYINITIAL> {LABEL}                                         { yybegin(YYINITIAL); return KlTypes.LABEL; }
 
 <YYINITIAL> {KEY_KEYWORD}                                   { yybegin(YYINITIAL); return KlTypes.KEY_KEYWORD; }
 <YYINITIAL> {USAGE_KEYWORD}                                 { yybegin(YYINITIAL); return KlTypes.USAGE_KEYWORD; }
