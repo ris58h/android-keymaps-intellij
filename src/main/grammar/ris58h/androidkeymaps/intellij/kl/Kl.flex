@@ -24,8 +24,7 @@ import com.intellij.psi.TokenType;
 EOL=\n
 WHITE_SPACE=[\ \t\r]
 END_OF_LINE_COMMENT=("#")[^\r\n]*
-NUMBER=(("0x")[0-9a-fA-F]+)|([0-9][^x][0-9]*)
-//TODO limit number of chars in hex number
+NUMBER=(("0x")[0-9a-fA-F]*)|([0-9][^x][0-9]*)
 IDENTIFIER=[A-Z][A-Z_]*
 KEY_KEYWORD="key"
 USAGE_KEYWORD="usage"
