@@ -15,7 +15,7 @@
 
 klFile ::= item_*
 
-private item_ ::= (key)
+private item_ ::= (COMMENT|key)
 
 key ::= KEY_KEYWORD USAGE_KEYWORD? NUMBER IDENTIFIER key_flags
 key_flags ::= (IDENTIFIER)*

@@ -32,8 +32,8 @@ USAGE_KEYWORD="usage"
 
 %%
 
-//TODO
-//<YYINITIAL> {END_OF_LINE_COMMENT}                           { yybegin(YYINITIAL); return KlTypes.COMMENT; }
+<YYINITIAL> {END_OF_LINE_COMMENT}                           { yybegin(YYINITIAL); return KlTypes.COMMENT; }
+
 <YYINITIAL> {NUMBER}                                        { yybegin(YYINITIAL); return KlTypes.NUMBER; }
 <YYINITIAL> {IDENTIFIER}                                    { yybegin(YYINITIAL); return KlTypes.IDENTIFIER; }
 

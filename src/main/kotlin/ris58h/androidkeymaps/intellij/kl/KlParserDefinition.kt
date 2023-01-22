@@ -11,8 +11,7 @@ import com.intellij.psi.PsiFile
 import com.intellij.psi.tree.IFileElementType
 import com.intellij.psi.tree.TokenSet
 import ris58h.androidkeymaps.intellij.kl.parser.KlParser
-//TODO
-//import ris58h.androidkeymaps.intellij.kl.psi.COMMENTS
+import ris58h.androidkeymaps.intellij.kl.psi.COMMENTS
 import ris58h.androidkeymaps.intellij.kl.psi.KlFile
 import ris58h.androidkeymaps.intellij.kl.psi.KlTypes
 
@@ -27,8 +26,7 @@ class KlParserDefinition : ParserDefinition {
 
     override fun getFileNodeType(): IFileElementType = FILE
 
-//    TODO KlTokenSets
-    override fun getCommentTokens(): TokenSet = TokenSet.EMPTY
+    override fun getCommentTokens(): TokenSet = COMMENTS
 
     override fun getStringLiteralElements(): TokenSet = TokenSet.EMPTY
 

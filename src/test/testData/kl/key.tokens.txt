@@ -1,3 +1,5 @@
+KlTokenType.COMMENT ('# Key Layout file')
+WHITE_SPACE ('\n')
 KlTokenType.KEY_KEYWORD ('key')
 WHITE_SPACE (' ')
 KlTokenType.NUMBER ('114')
