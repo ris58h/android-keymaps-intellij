@@ -1,5 +1,5 @@
 Android Key Layout file
-  PsiElement(KlTokenType.COMMENT)('# Key Layout file')
+  PsiComment(KlTokenType.COMMENT)('# Key Layout file')
   PsiWhiteSpace('\n')
   KlKeyImpl(KEY)
     PsiElement(KlTokenType.KEY_KEYWORD)('key')
