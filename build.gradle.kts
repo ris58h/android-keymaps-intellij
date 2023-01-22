@@ -22,18 +22,33 @@ intellij {
 }
 
 tasks {
-    generateLexer {
+    val generateIdcLexer = task<org.jetbrains.grammarkit.tasks.GenerateLexerTask>("generateIdcLexer") {
         source.set("src/main/grammar/ris58h/androidkeymaps/intellij/idc/Idc.flex")
-        targetDir.set("src/gen/java/ris58h/androidkeymaps/intellij/idc")
+        targetDir.set("src/main/gen/ris58h/androidkeymaps/intellij/idc")
         targetClass.set("IdcLexer")
         purgeOldFiles.set(true)
     }
 
-    generateParser {
+    val generateIdcParser = task<org.jetbrains.grammarkit.tasks.GenerateParserTask>("generateIdcParser"){
         source.set("src/main/grammar/ris58h/androidkeymaps/intellij/idc/Idc.bnf")
-        targetRoot.set("src/gen/java")
+        targetRoot.set("src/main/gen")
         pathToParser.set("/ris58h/androidkeymaps/intellij/idc/parser/IdcParser.java")
         pathToPsiRoot.set("/ris58h/androidkeymaps/intellij/idc/psi")
+        purgeOldFiles.set(true)
+    }
+
+    val generateKlLexer = task<org.jetbrains.grammarkit.tasks.GenerateLexerTask>("generateKlLexer") {
+        source.set("src/main/grammar/ris58h/androidkeymaps/intellij/kl/Kl.flex")
+        targetDir.set("src/main/gen/ris58h/androidkeymaps/intellij/kl")
+        targetClass.set("KlLexer")
+        purgeOldFiles.set(true)
+    }
+
+    val generateKlParser = task<org.jetbrains.grammarkit.tasks.GenerateParserTask>("generateKlParser"){
+        source.set("src/main/grammar/ris58h/androidkeymaps/intellij/kl/Kl.bnf")
+        targetRoot.set("src/main/gen")
+        pathToParser.set("/ris58h/androidkeymaps/intellij/kl/parser/KlParser.java")
+        pathToPsiRoot.set("/ris58h/androidkeymaps/intellij/kl/psi")
         purgeOldFiles.set(true)
     }
 
@@ -45,7 +60,7 @@ tasks {
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
         kotlinOptions.jvmTarget = "11"
 
-        dependsOn(generateLexer, generateParser)
+        dependsOn(generateIdcLexer, generateIdcParser, generateKlLexer, generateKlParser)
     }
 
     patchPluginXml {
@@ -64,4 +79,4 @@ tasks {
     }
 }
 
-sourceSets["main"].java.srcDirs("src/gen/java")
+sourceSets["main"].java.srcDirs("src/main/gen")

@@ -13,6 +13,7 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
+        <!-- Input Device Configuration -->
         <fileType
                 name="AndroidInputDeviceConfiguration"
                 implementationClass="ris58h.androidkeymaps.intellij.idc.IdcFileType"
@@ -34,5 +35,14 @@
                 displayName="Input Device Configuration duplicate key"
                 enabledByDefault="true"
                 implementationClass="ris58h.androidkeymaps.intellij.idc.IdcDuplicateKeyInspection"/>
+        <!-- Key Layout -->
+        <fileType
+                name="AndroidKeyLayout"
+                implementationClass="ris58h.androidkeymaps.intellij.kl.KlFileType"
+                language="AndroidKeyLayout"
+                extensions="kl"/>
+        <lang.parserDefinition
+                language="AndroidKeyLayout"
+                implementationClass="ris58h.androidkeymaps.intellij.kl.KlParserDefinition"/>
     </extensions>
 </idea-plugin>

@@ -12,5 +12,6 @@ object IdcFileType : LanguageFileType(IdcLanguage) {
 
     override fun getDefaultExtension(): String = "idc"
 
+//    TODO
     override fun getIcon(): Icon? = null
 }

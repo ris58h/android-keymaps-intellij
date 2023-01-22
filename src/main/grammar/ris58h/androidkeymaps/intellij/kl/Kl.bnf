@@ -1,0 +1,21 @@
+{
+  parserClass="ris58h.androidkeymaps.intellij.kl.parser.KlParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Kl"
+  psiImplClassSuffix="Impl"
+  psiPackage="ris58h.androidkeymaps.intellij.kl.psi"
+  psiImplPackage="ris58h.androidkeymaps.intellij.kl.psi.impl"
+
+  elementTypeHolderClass="ris58h.androidkeymaps.intellij.kl.psi.KlTypes"
+  elementTypeClass="ris58h.androidkeymaps.intellij.kl.psi.KlElementType"
+  tokenTypeClass="ris58h.androidkeymaps.intellij.kl.psi.KlTokenType"
+}
+
+klFile ::= item_*
+
+private item_ ::= (key)
+
+key ::= KEY_KEYWORD USAGE_KEYWORD? NUMBER IDENTIFIER key_flags
+key_flags ::= (IDENTIFIER)*

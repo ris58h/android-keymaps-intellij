@@ -1,0 +1,7 @@
+key 114             VOLUME_DOWN
+key usage 114       VOLUME_DOWN
+key 16              Q               VIRTUAL
+key usage 16        Q               VIRTUAL
+key 0x0C006F        BRIGHTNESS_UP
+key usage 0x0C006F  BRIGHTNESS_UP
+key usage 0x0C0066  BRIGHTNESS_UP   VIRTUAL FUNCTION GESTURE WAKE
