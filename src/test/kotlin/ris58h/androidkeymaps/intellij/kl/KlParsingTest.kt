@@ -8,6 +8,10 @@ class KlParsingTest : ParsingTestCase("", "kl", true, KlParserDefinition()) {
         doTest(true)
     }
 
+    fun testAxis() {
+        doFileTest()
+    }
+
     fun testKey() {
         doFileTest()
     }

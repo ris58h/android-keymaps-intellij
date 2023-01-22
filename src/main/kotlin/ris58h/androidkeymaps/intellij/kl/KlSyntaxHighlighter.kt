@@ -28,12 +28,21 @@ class KlSyntaxHighlighter : SyntaxHighlighterBase() {
         private val IDENTIFIER_KEYS = arrayOf(IDENTIFIER)
         private val COMMENT_KEYS = arrayOf(COMMENT)
         private val EMPTY_KEYS = arrayOf<TextAttributesKey>()
+
+        private val KEYWORD_TYPES = setOf(
+            KlTypes.KEY_KEYWORD,
+            KlTypes.USAGE_KEYWORD,
+            KlTypes.AXIS_KEYWORD,
+            KlTypes.INVERT_KEYWORD,
+            KlTypes.SPLIT_KEYWORD,
+            KlTypes.FLAT_KEYWORD,
+        )
     }
 
     override fun getHighlightingLexer(): Lexer = KlLexerAdapter()
 
     override fun getTokenHighlights(tokenType: IElementType): Array<TextAttributesKey> {
-        if (tokenType == KlTypes.KEY_KEYWORD || tokenType == KlTypes.USAGE_KEYWORD) {
+        if (KEYWORD_TYPES.contains(tokenType)) {
             return KEYWORD_KEYS
         }
         if (tokenType == KlTypes.NUMBER) {

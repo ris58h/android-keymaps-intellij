@@ -1,4 +1,4 @@
-KlTokenType.COMMENT ('# Key Layout file')
+KlTokenType.COMMENT ('# https://source.android.com/docs/core/interaction/input/key-layout-files#key-declarations')
 WHITE_SPACE ('\n')
 KlTokenType.KEY_KEYWORD ('key')
 WHITE_SPACE (' ')

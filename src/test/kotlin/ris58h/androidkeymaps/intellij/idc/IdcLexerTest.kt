@@ -7,7 +7,7 @@ class IdcLexerTest : LexerTestCase() {
     override fun createLexer(): Lexer = IdcLexerAdapter()
     override fun getDirPath(): String = "src/test/testData/idc"
     override fun getPathToTestDataFile(extension: String): String {
-        return getDirPath() + "/" + getTestName(true) + extension;
+        return getDirPath() + "/" + getTestName(true) + extension
     }
     override fun getExpectedFileExtension(): String = ".tokens.txt"
     private fun doFileTest() {

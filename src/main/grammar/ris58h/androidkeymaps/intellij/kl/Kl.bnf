@@ -15,7 +15,12 @@
 
 klFile ::= item_*
 
-private item_ ::= (COMMENT|key)
+private item_ ::= (COMMENT|key_expr|axis_expr)
 
-key ::= KEY_KEYWORD USAGE_KEYWORD? NUMBER IDENTIFIER key_flags
+key_expr ::= KEY_KEYWORD USAGE_KEYWORD? NUMBER IDENTIFIER key_flags
 key_flags ::= (IDENTIFIER)*
+
+axis_expr ::= AXIS_KEYWORD NUMBER (IDENTIFIER|axis_split|axis_invert) axis_flat
+private axis_split ::= SPLIT_KEYWORD NUMBER IDENTIFIER IDENTIFIER
+private axis_invert ::= INVERT_KEYWORD IDENTIFIER
+private axis_flat ::= (FLAT_KEYWORD NUMBER?)?

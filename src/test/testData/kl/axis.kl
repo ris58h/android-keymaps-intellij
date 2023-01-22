@@ -1,0 +1,11 @@
+# https://source.android.com/docs/core/interaction/input/key-layout-files#basic-axes
+axis 0x00 X
+
+# https://source.android.com/docs/core/interaction/input/key-layout-files#split-axes
+axis 0x01 split 0x7f GAS BRAKE
+
+# https://source.android.com/docs/core/interaction/input/key-layout-files#inverted-axes
+axis 0x05 invert BRAKE
+
+# https://source.android.com/docs/core/interaction/input/key-layout-files#center-flat-option
+axis 0x03 Z flat 4096

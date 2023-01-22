@@ -1,7 +1,7 @@
 Android Key Layout file
-  PsiComment(KlTokenType.COMMENT)('# Key Layout file')
+  PsiComment(KlTokenType.COMMENT)('# https://source.android.com/docs/core/interaction/input/key-layout-files#key-declarations')
   PsiWhiteSpace('\n')
-  KlKeyImpl(KEY)
+  KlKeyExprImpl(KEY_EXPR)
     PsiElement(KlTokenType.KEY_KEYWORD)('key')
     PsiWhiteSpace(' ')
     PsiElement(KlTokenType.NUMBER)('114')
@@ -10,7 +10,7 @@ Android Key Layout file
     PsiWhiteSpace('\n')
     KlKeyFlagsImpl(KEY_FLAGS)
       <empty list>
-  KlKeyImpl(KEY)
+  KlKeyExprImpl(KEY_EXPR)
     PsiElement(KlTokenType.KEY_KEYWORD)('key')
     PsiWhiteSpace(' ')
     PsiElement(KlTokenType.USAGE_KEYWORD)('usage')
@@ -21,7 +21,7 @@ Android Key Layout file
     PsiWhiteSpace('\n')
     KlKeyFlagsImpl(KEY_FLAGS)
       <empty list>
-  KlKeyImpl(KEY)
+  KlKeyExprImpl(KEY_EXPR)
     PsiElement(KlTokenType.KEY_KEYWORD)('key')
     PsiWhiteSpace(' ')
     PsiElement(KlTokenType.NUMBER)('16')
@@ -31,7 +31,7 @@ Android Key Layout file
     KlKeyFlagsImpl(KEY_FLAGS)
       PsiElement(KlTokenType.IDENTIFIER)('VIRTUAL')
   PsiWhiteSpace('\n')
-  KlKeyImpl(KEY)
+  KlKeyExprImpl(KEY_EXPR)
     PsiElement(KlTokenType.KEY_KEYWORD)('key')
     PsiWhiteSpace(' ')
     PsiElement(KlTokenType.USAGE_KEYWORD)('usage')
@@ -43,7 +43,7 @@ Android Key Layout file
     KlKeyFlagsImpl(KEY_FLAGS)
       PsiElement(KlTokenType.IDENTIFIER)('VIRTUAL')
   PsiWhiteSpace('\n')
-  KlKeyImpl(KEY)
+  KlKeyExprImpl(KEY_EXPR)
     PsiElement(KlTokenType.KEY_KEYWORD)('key')
     PsiWhiteSpace(' ')
     PsiElement(KlTokenType.NUMBER)('0x0C006F')
@@ -52,7 +52,7 @@ Android Key Layout file
     PsiWhiteSpace('\n')
     KlKeyFlagsImpl(KEY_FLAGS)
       <empty list>
-  KlKeyImpl(KEY)
+  KlKeyExprImpl(KEY_EXPR)
     PsiElement(KlTokenType.KEY_KEYWORD)('key')
     PsiWhiteSpace(' ')
     PsiElement(KlTokenType.USAGE_KEYWORD)('usage')
@@ -63,7 +63,7 @@ Android Key Layout file
     PsiWhiteSpace('\n')
     KlKeyFlagsImpl(KEY_FLAGS)
       <empty list>
-  KlKeyImpl(KEY)
+  KlKeyExprImpl(KEY_EXPR)
     PsiElement(KlTokenType.KEY_KEYWORD)('key')
     PsiWhiteSpace(' ')
     PsiElement(KlTokenType.USAGE_KEYWORD)('usage')
