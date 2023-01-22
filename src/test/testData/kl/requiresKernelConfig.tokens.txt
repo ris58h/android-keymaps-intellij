@@ -1,0 +1,3 @@
+KlTokenType.RKC_KEYWORD ('requires_kernel_config')
+WHITE_SPACE (' ')
+KlTokenType.LABEL ('CONFIG_HID_PLAYSTATION')

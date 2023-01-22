@@ -20,6 +20,10 @@ class KlParsingTest : ParsingTestCase("", "kl", true, KlParserDefinition()) {
         doFileTest()
     }
 
+    fun testRequiresKernelConfig() {
+        doFileTest()
+    }
+
     fun testSensor() {
         doFileTest()
     }

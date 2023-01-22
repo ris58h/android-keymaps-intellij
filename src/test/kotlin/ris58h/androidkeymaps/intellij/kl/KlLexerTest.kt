@@ -26,6 +26,10 @@ class KlLexerTest : LexerTestCase() {
         doFileTest()
     }
 
+    fun testRequiresKernelConfig() {
+        doFileTest()
+    }
+
     fun testSensor() {
         doFileTest()
     }

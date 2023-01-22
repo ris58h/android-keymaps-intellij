@@ -35,6 +35,7 @@ SPLIT_KEYWORD="split"
 FLAT_KEYWORD="flat"
 LED_KEYWORD="led"
 SENSOR_KEYWORD="sensor"
+RKC_KEYWORD="requires_kernel_config"
 
 %%
 
@@ -54,5 +55,7 @@ SENSOR_KEYWORD="sensor"
 <YYINITIAL> {LED_KEYWORD}                                   { yybegin(YYINITIAL); return KlTypes.LED_KEYWORD; }
 
 <YYINITIAL> {SENSOR_KEYWORD}                                { yybegin(YYINITIAL); return KlTypes.SENSOR_KEYWORD; }
+
+<YYINITIAL> {RKC_KEYWORD}                                   { yybegin(YYINITIAL); return KlTypes.RKC_KEYWORD; }
 
 ({EOL}|{WHITE_SPACE})+                                      { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }

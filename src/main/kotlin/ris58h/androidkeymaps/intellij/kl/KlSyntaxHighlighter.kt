@@ -38,6 +38,7 @@ class KlSyntaxHighlighter : SyntaxHighlighterBase() {
             KlTypes.FLAT_KEYWORD,
             KlTypes.LED_KEYWORD,
             KlTypes.SENSOR_KEYWORD,
+            KlTypes.RKC_KEYWORD,
         )
     }
 

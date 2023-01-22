@@ -15,7 +15,7 @@
 
 klFile ::= item_*
 
-private item_ ::= (COMMENT|key_expr|axis_expr|led_expr|sensor_expr)
+private item_ ::= (COMMENT|key_expr|axis_expr|led_expr|sensor_expr|rkc_expr)
 
 key_expr ::= KEY_KEYWORD USAGE_KEYWORD? NUMBER LABEL key_flags
 key_flags ::= (LABEL)*
@@ -28,3 +28,5 @@ private axis_flat ::= (FLAT_KEYWORD NUMBER?)?
 led_expr ::= LED_KEYWORD USAGE_KEYWORD? NUMBER LABEL
 
 sensor_expr ::= SENSOR_KEYWORD NUMBER LABEL LABEL
+
+rkc_expr ::= RKC_KEYWORD LABEL
