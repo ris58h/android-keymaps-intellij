@@ -29,13 +29,12 @@ LABEL=[A-Z][A-Z_]*
 
 KEY_KEYWORD="key"
 USAGE_KEYWORD="usage"
-
 AXIS_KEYWORD="axis"
 INVERT_KEYWORD="invert"
 SPLIT_KEYWORD="split"
 FLAT_KEYWORD="flat"
-
 LED_KEYWORD="led"
+SENSOR_KEYWORD="sensor"
 
 %%
 
@@ -53,5 +52,7 @@ LED_KEYWORD="led"
 <YYINITIAL> {FLAT_KEYWORD}                                  { yybegin(YYINITIAL); return KlTypes.FLAT_KEYWORD; }
 
 <YYINITIAL> {LED_KEYWORD}                                   { yybegin(YYINITIAL); return KlTypes.LED_KEYWORD; }
+
+<YYINITIAL> {SENSOR_KEYWORD}                                { yybegin(YYINITIAL); return KlTypes.SENSOR_KEYWORD; }
 
 ({EOL}|{WHITE_SPACE})+                                      { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }

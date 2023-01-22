@@ -25,4 +25,8 @@ class KlLexerTest : LexerTestCase() {
     fun testLed() {
         doFileTest()
     }
+
+    fun testSensor() {
+        doFileTest()
+    }
 }
