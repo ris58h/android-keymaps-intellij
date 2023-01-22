@@ -35,6 +35,8 @@ INVERT_KEYWORD="invert"
 SPLIT_KEYWORD="split"
 FLAT_KEYWORD="flat"
 
+LED_KEYWORD="led"
+
 %%
 
 <YYINITIAL> {END_OF_LINE_COMMENT}                           { yybegin(YYINITIAL); return KlTypes.COMMENT; }
@@ -49,5 +51,7 @@ FLAT_KEYWORD="flat"
 <YYINITIAL> {INVERT_KEYWORD}                                { yybegin(YYINITIAL); return KlTypes.INVERT_KEYWORD; }
 <YYINITIAL> {SPLIT_KEYWORD}                                 { yybegin(YYINITIAL); return KlTypes.SPLIT_KEYWORD; }
 <YYINITIAL> {FLAT_KEYWORD}                                  { yybegin(YYINITIAL); return KlTypes.FLAT_KEYWORD; }
+
+<YYINITIAL> {LED_KEYWORD}                                   { yybegin(YYINITIAL); return KlTypes.LED_KEYWORD; }
 
 ({EOL}|{WHITE_SPACE})+                                      { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }

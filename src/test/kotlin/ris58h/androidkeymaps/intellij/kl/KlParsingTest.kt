@@ -15,4 +15,8 @@ class KlParsingTest : ParsingTestCase("", "kl", true, KlParserDefinition()) {
     fun testKey() {
         doFileTest()
     }
+
+    fun testLed() {
+        doFileTest()
+    }
 }

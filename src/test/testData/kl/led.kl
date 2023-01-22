@@ -1,0 +1,2 @@
+led 0x1             CAPS_LOCK
+led usage 115       SCROLL_LOCK

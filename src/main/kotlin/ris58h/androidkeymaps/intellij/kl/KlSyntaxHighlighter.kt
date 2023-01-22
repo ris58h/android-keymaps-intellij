@@ -36,6 +36,7 @@ class KlSyntaxHighlighter : SyntaxHighlighterBase() {
             KlTypes.INVERT_KEYWORD,
             KlTypes.SPLIT_KEYWORD,
             KlTypes.FLAT_KEYWORD,
+            KlTypes.LED_KEYWORD,
         )
     }
 
