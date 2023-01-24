@@ -18,7 +18,15 @@ class KlLexerTest : LexerTestCase() {
         doFileTest()
     }
 
+    fun testAxisUnexpectedEOL() {
+        doFileTest()
+    }
+
     fun testKey() {
+        doFileTest()
+    }
+
+    fun testKeyUnexpectedEOL() {
         doFileTest()
     }
 
@@ -26,11 +34,23 @@ class KlLexerTest : LexerTestCase() {
         doFileTest()
     }
 
+    fun testLedUnexpectedEOL() {
+        doFileTest()
+    }
+
     fun testRequiresKernelConfig() {
         doFileTest()
     }
 
+    fun testRequiresKernelConfigUnexpectedEOL() {
+        doFileTest()
+    }
+
     fun testSensor() {
+        doFileTest()
+    }
+
+    fun testSensorUnexpectedEOL() {
         doFileTest()
     }
 }

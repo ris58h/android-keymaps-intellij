@@ -1,0 +1,21 @@
+Android Key Layout file
+  KlSensorExprImpl(SENSOR_EXPR)
+    PsiElement(KlTokenType.SENSOR_KEYWORD)('sensor')
+    PsiErrorElement:KlTokenType.NUMBER expected, got 'sensor'
+      <empty list>
+  PsiWhiteSpace('\n')
+  KlSensorExprImpl(SENSOR_EXPR)
+    PsiElement(KlTokenType.SENSOR_KEYWORD)('sensor')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.NUMBER)('0x01')
+    PsiErrorElement:KlTokenType.LABEL expected, got 'sensor'
+      <empty list>
+  PsiWhiteSpace('\n')
+  KlSensorExprImpl(SENSOR_EXPR)
+    PsiElement(KlTokenType.SENSOR_KEYWORD)('sensor')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.NUMBER)('0x02')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.LABEL)('ACCELEROMETER')
+    PsiErrorElement:KlTokenType.LABEL expected
+      <empty list>

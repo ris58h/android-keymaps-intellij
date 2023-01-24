@@ -1,0 +1,5 @@
+Android Key Layout file
+  KlRkcExprImpl(RKC_EXPR)
+    PsiElement(KlTokenType.RKC_KEYWORD)('requires_kernel_config')
+    PsiErrorElement:KlTokenType.LABEL expected
+      <empty list>

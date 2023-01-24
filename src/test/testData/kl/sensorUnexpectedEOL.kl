@@ -1,0 +1,3 @@
+sensor
+sensor 0x01
+sensor 0x02 ACCELEROMETER

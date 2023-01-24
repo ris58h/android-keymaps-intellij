@@ -1,0 +1,63 @@
+Android Key Layout file
+  KlAxisExprImpl(AXIS_EXPR)
+    PsiElement(KlTokenType.AXIS_KEYWORD)('axis')
+    PsiErrorElement:KlTokenType.NUMBER expected, got 'axis'
+      <empty list>
+  PsiWhiteSpace('\n')
+  KlAxisExprImpl(AXIS_EXPR)
+    PsiElement(KlTokenType.AXIS_KEYWORD)('axis')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.NUMBER)('0x00')
+    PsiErrorElement:KlTokenType.INVERT_KEYWORD, KlTokenType.LABEL or KlTokenType.SPLIT_KEYWORD expected, got 'axis'
+      <empty list>
+  PsiWhiteSpace('\n')
+  KlAxisExprImpl(AXIS_EXPR)
+    PsiElement(KlTokenType.AXIS_KEYWORD)('axis')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.NUMBER)('0x01')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.SPLIT_KEYWORD)('split')
+    PsiErrorElement:KlTokenType.NUMBER expected, got 'axis'
+      <empty list>
+  PsiWhiteSpace('\n')
+  KlAxisExprImpl(AXIS_EXPR)
+    PsiElement(KlTokenType.AXIS_KEYWORD)('axis')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.NUMBER)('0x01')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.SPLIT_KEYWORD)('split')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.NUMBER)('0x7f')
+    PsiErrorElement:KlTokenType.LABEL expected, got 'axis'
+      <empty list>
+  PsiWhiteSpace('\n')
+  KlAxisExprImpl(AXIS_EXPR)
+    PsiElement(KlTokenType.AXIS_KEYWORD)('axis')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.NUMBER)('0x01')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.SPLIT_KEYWORD)('split')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.NUMBER)('0x7f')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.LABEL)('GAS')
+    PsiErrorElement:KlTokenType.LABEL expected, got 'axis'
+      <empty list>
+  PsiWhiteSpace('\n')
+  KlAxisExprImpl(AXIS_EXPR)
+    PsiElement(KlTokenType.AXIS_KEYWORD)('axis')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.NUMBER)('0x05')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.INVERT_KEYWORD)('invert')
+    PsiErrorElement:KlTokenType.LABEL expected, got 'axis'
+      <empty list>
+  PsiWhiteSpace('\n')
+  KlAxisExprImpl(AXIS_EXPR)
+    PsiElement(KlTokenType.AXIS_KEYWORD)('axis')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.NUMBER)('0x03')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.LABEL)('Z')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.FLAT_KEYWORD)('flat')

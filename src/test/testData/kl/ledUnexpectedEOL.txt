@@ -1,0 +1,28 @@
+Android Key Layout file
+  KlLedExprImpl(LED_EXPR)
+    PsiElement(KlTokenType.LED_KEYWORD)('led')
+    PsiErrorElement:KlTokenType.NUMBER or KlTokenType.USAGE_KEYWORD expected, got 'led'
+      <empty list>
+  PsiWhiteSpace('\n')
+  KlLedExprImpl(LED_EXPR)
+    PsiElement(KlTokenType.LED_KEYWORD)('led')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.NUMBER)('0x1')
+    PsiErrorElement:KlTokenType.LABEL expected, got 'led'
+      <empty list>
+  PsiWhiteSpace('\n')
+  KlLedExprImpl(LED_EXPR)
+    PsiElement(KlTokenType.LED_KEYWORD)('led')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.USAGE_KEYWORD)('usage')
+    PsiErrorElement:KlTokenType.NUMBER expected, got 'led'
+      <empty list>
+  PsiWhiteSpace('\n')
+  KlLedExprImpl(LED_EXPR)
+    PsiElement(KlTokenType.LED_KEYWORD)('led')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.USAGE_KEYWORD)('usage')
+    PsiWhiteSpace(' ')
+    PsiElement(KlTokenType.NUMBER)('115')
+    PsiErrorElement:KlTokenType.LABEL expected
+      <empty list>
