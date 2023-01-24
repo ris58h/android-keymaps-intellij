@@ -61,3 +61,5 @@ Android Key Layout file
     PsiElement(KlTokenType.LABEL)('Z')
     PsiWhiteSpace(' ')
     PsiElement(KlTokenType.FLAT_KEYWORD)('flat')
+    PsiErrorElement:KlTokenType.NUMBER expected
+      <empty list>

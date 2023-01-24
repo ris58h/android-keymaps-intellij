@@ -19,11 +19,11 @@ private item ::= COMMENT|expr
 private expr ::= key_expr|axis_expr|led_expr|sensor_expr|rkc_expr
 private recovery_expr ::= !(KEY_KEYWORD|AXIS_KEYWORD|LED_KEYWORD|SENSOR_KEYWORD|RKC_KEYWORD)
 
-key_expr ::= KEY_KEYWORD USAGE_KEYWORD? NUMBER LABEL key_flags {
+key_expr ::= KEY_KEYWORD USAGE_KEYWORD? NUMBER LABEL key_flags? {
    pin=1
    recoverWhile="recovery_expr"
 }
-key_flags ::= LABEL*
+private key_flags ::= LABEL+
 
 axis_expr ::= AXIS_KEYWORD NUMBER (LABEL|axis_split|axis_invert) axis_flat? {
     pin=1
@@ -31,7 +31,7 @@ axis_expr ::= AXIS_KEYWORD NUMBER (LABEL|axis_split|axis_invert) axis_flat? {
 }
 private axis_split ::= SPLIT_KEYWORD NUMBER LABEL LABEL
 private axis_invert ::= INVERT_KEYWORD LABEL
-private axis_flat ::= (FLAT_KEYWORD NUMBER?)
+private axis_flat ::= FLAT_KEYWORD NUMBER
 
 led_expr ::= LED_KEYWORD USAGE_KEYWORD? NUMBER LABEL {
     pin=1
