@@ -13,11 +13,11 @@
   tokenTypeClass="ris58h.androidkeymaps.intellij.idc.psi.IdcTokenType"
 }
 
-idcFile ::= item_*
+idcFile ::= item*
 
-private item_ ::= (property|COMMENT)
+private item ::= property|COMMENT
 
-property ::= (KEY SEPARATOR VALUE?) {
+property ::= KEY SEPARATOR VALUE? {
   pin=1
   recoverWhile="recover_property"
 }
