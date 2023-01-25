@@ -59,3 +59,5 @@ RKC_KEYWORD="requires_kernel_config"
 <YYINITIAL> {RKC_KEYWORD}                                   { yybegin(YYINITIAL); return KlTypes.RKC_KEYWORD; }
 
 ({EOL}|{WHITE_SPACE})+                                      { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
+
+[^]                                                         { yybegin(YYINITIAL); return TokenType.BAD_CHARACTER; }
