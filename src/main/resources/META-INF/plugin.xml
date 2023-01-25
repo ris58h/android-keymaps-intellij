@@ -31,8 +31,9 @@
         <localInspection
                 language="AndroidInputDeviceConfiguration"
                 level="ERROR"
-                groupName="Android keymaps"
-                displayName="Input Device Configuration duplicate key"
+                groupPath="Android,Keymaps"
+                groupName="Input device configuration"
+                displayName="Duplicate key"
                 enabledByDefault="true"
                 implementationClass="ris58h.androidkeymaps.intellij.idc.IdcDuplicateKeyInspection"/>
         <!-- Key Layout -->
