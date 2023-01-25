@@ -22,6 +22,7 @@ private recovery_entry ::= !(KEY_KEYWORD|AXIS_KEYWORD|LED_KEYWORD|SENSOR_KEYWORD
 key_entry ::= KEY_KEYWORD USAGE_KEYWORD? NUMBER LABEL key_flags? {
    pin=1
    recoverWhile="recovery_entry"
+   implements="ris58h.androidkeymaps.intellij.kl.psi.UsageEntry"
 }
 private key_flags ::= LABEL+
 
@@ -36,6 +37,7 @@ private axis_flat ::= FLAT_KEYWORD NUMBER
 led_entry ::= LED_KEYWORD USAGE_KEYWORD? NUMBER LABEL {
     pin=1
     recoverWhile="recovery_entry"
+    implements="ris58h.androidkeymaps.intellij.kl.psi.UsageEntry"
 }
 
 sensor_entry ::= SENSOR_KEYWORD NUMBER LABEL LABEL {

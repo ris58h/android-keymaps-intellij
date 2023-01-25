@@ -58,7 +58,10 @@ tasks {
         targetCompatibility = "11"
     }
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions.jvmTarget = "11"
+        kotlinOptions {
+            jvmTarget = "11"
+            freeCompilerArgs = listOf("-Xjvm-default=all")
+        }
 
         dependsOn(generateIdcLexer, generateIdcParser, generateKlLexer, generateKlParser)
     }
