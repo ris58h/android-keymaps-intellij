@@ -5,4 +5,7 @@ import com.intellij.psi.PsiElement
 interface RkcEntryMixin : PsiElement {
     val configName : String?
         get() = node.findChildByType(KlTypes.LABEL)?.text
+
+    val configNameElement : PsiElement?
+        get() = node.findChildByType(KlTypes.LABEL)?.psi
 }

@@ -8,6 +8,9 @@ interface CodeEntry : PsiElement {
             val number = node.findChildByType(KlTypes.NUMBER)
             return if (number == null) null else strtol(number.text)
         }
+
+    val codeElement: PsiElement?
+        get() = node.findChildByType(KlTypes.NUMBER)?.psi
 }
 
 private fun strtol(str: String): Long? {
