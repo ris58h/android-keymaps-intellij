@@ -29,6 +29,7 @@ private key_flags ::= LABEL+
 axis_entry ::= AXIS_KEYWORD NUMBER (LABEL|axis_split|axis_invert) axis_flat? {
     pin=1
     recoverWhile="recovery_entry"
+    implements="ris58h.androidkeymaps.intellij.kl.psi.CodeEntry"
 }
 private axis_split ::= SPLIT_KEYWORD NUMBER LABEL LABEL
 private axis_invert ::= INVERT_KEYWORD LABEL
@@ -43,6 +44,7 @@ led_entry ::= LED_KEYWORD USAGE_KEYWORD? NUMBER LABEL {
 sensor_entry ::= SENSOR_KEYWORD NUMBER LABEL LABEL {
     pin=1
     recoverWhile="recovery_entry"
+    implements="ris58h.androidkeymaps.intellij.kl.psi.CodeEntry"
 }
 
 rkc_entry ::= RKC_KEYWORD LABEL {
