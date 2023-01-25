@@ -1,17 +1,17 @@
 Android Key Layout file
-  KlAxisExprImpl(AXIS_EXPR)
+  KlAxisEntryImpl(AXIS_ENTRY)
     PsiElement(KlTokenType.AXIS_KEYWORD)('axis')
     PsiErrorElement:KlTokenType.NUMBER expected, got 'axis'
       <empty list>
   PsiWhiteSpace('\n')
-  KlAxisExprImpl(AXIS_EXPR)
+  KlAxisEntryImpl(AXIS_ENTRY)
     PsiElement(KlTokenType.AXIS_KEYWORD)('axis')
     PsiWhiteSpace(' ')
     PsiElement(KlTokenType.NUMBER)('0x00')
     PsiErrorElement:KlTokenType.INVERT_KEYWORD, KlTokenType.LABEL or KlTokenType.SPLIT_KEYWORD expected, got 'axis'
       <empty list>
   PsiWhiteSpace('\n')
-  KlAxisExprImpl(AXIS_EXPR)
+  KlAxisEntryImpl(AXIS_ENTRY)
     PsiElement(KlTokenType.AXIS_KEYWORD)('axis')
     PsiWhiteSpace(' ')
     PsiElement(KlTokenType.NUMBER)('0x01')
@@ -20,7 +20,7 @@ Android Key Layout file
     PsiErrorElement:KlTokenType.NUMBER expected, got 'axis'
       <empty list>
   PsiWhiteSpace('\n')
-  KlAxisExprImpl(AXIS_EXPR)
+  KlAxisEntryImpl(AXIS_ENTRY)
     PsiElement(KlTokenType.AXIS_KEYWORD)('axis')
     PsiWhiteSpace(' ')
     PsiElement(KlTokenType.NUMBER)('0x01')
@@ -31,7 +31,7 @@ Android Key Layout file
     PsiErrorElement:KlTokenType.LABEL expected, got 'axis'
       <empty list>
   PsiWhiteSpace('\n')
-  KlAxisExprImpl(AXIS_EXPR)
+  KlAxisEntryImpl(AXIS_ENTRY)
     PsiElement(KlTokenType.AXIS_KEYWORD)('axis')
     PsiWhiteSpace(' ')
     PsiElement(KlTokenType.NUMBER)('0x01')
@@ -44,7 +44,7 @@ Android Key Layout file
     PsiErrorElement:KlTokenType.LABEL expected, got 'axis'
       <empty list>
   PsiWhiteSpace('\n')
-  KlAxisExprImpl(AXIS_EXPR)
+  KlAxisEntryImpl(AXIS_ENTRY)
     PsiElement(KlTokenType.AXIS_KEYWORD)('axis')
     PsiWhiteSpace(' ')
     PsiElement(KlTokenType.NUMBER)('0x05')
@@ -53,7 +53,7 @@ Android Key Layout file
     PsiErrorElement:KlTokenType.LABEL expected, got 'axis'
       <empty list>
   PsiWhiteSpace('\n')
-  KlAxisExprImpl(AXIS_EXPR)
+  KlAxisEntryImpl(AXIS_ENTRY)
     PsiElement(KlTokenType.AXIS_KEYWORD)('axis')
     PsiWhiteSpace(' ')
     PsiElement(KlTokenType.NUMBER)('0x03')

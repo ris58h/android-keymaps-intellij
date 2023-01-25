@@ -1,5 +1,5 @@
 Android Key Layout file
-  KlRkcExprImpl(RKC_EXPR)
+  KlRkcEntryImpl(RKC_ENTRY)
     PsiElement(KlTokenType.RKC_KEYWORD)('requires_kernel_config')
     PsiWhiteSpace(' ')
     PsiElement(KlTokenType.LABEL)('CONFIG_HID_PLAYSTATION')

@@ -1,24 +1,24 @@
 Android Key Layout file
-  KlKeyExprImpl(KEY_EXPR)
+  KlKeyEntryImpl(KEY_ENTRY)
     PsiElement(KlTokenType.KEY_KEYWORD)('key')
     PsiErrorElement:KlTokenType.NUMBER or KlTokenType.USAGE_KEYWORD expected, got 'key'
       <empty list>
   PsiWhiteSpace('\n')
-  KlKeyExprImpl(KEY_EXPR)
+  KlKeyEntryImpl(KEY_ENTRY)
     PsiElement(KlTokenType.KEY_KEYWORD)('key')
     PsiWhiteSpace(' ')
     PsiElement(KlTokenType.NUMBER)('114')
     PsiErrorElement:KlTokenType.LABEL expected, got 'key'
       <empty list>
   PsiWhiteSpace('\n')
-  KlKeyExprImpl(KEY_EXPR)
+  KlKeyEntryImpl(KEY_ENTRY)
     PsiElement(KlTokenType.KEY_KEYWORD)('key')
     PsiWhiteSpace(' ')
     PsiElement(KlTokenType.USAGE_KEYWORD)('usage')
     PsiErrorElement:KlTokenType.NUMBER expected, got 'key'
       <empty list>
   PsiWhiteSpace('\n')
-  KlKeyExprImpl(KEY_EXPR)
+  KlKeyEntryImpl(KEY_ENTRY)
     PsiElement(KlTokenType.KEY_KEYWORD)('key')
     PsiWhiteSpace(' ')
     PsiElement(KlTokenType.USAGE_KEYWORD)('usage')
