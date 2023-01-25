@@ -50,4 +50,5 @@ sensor_entry ::= SENSOR_KEYWORD NUMBER LABEL LABEL {
 rkc_entry ::= RKC_KEYWORD LABEL {
     pin=1
     recoverWhile="recovery_entry"
+    implements="ris58h.androidkeymaps.intellij.kl.psi.RkcEntryMixin"
 }
