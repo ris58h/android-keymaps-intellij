@@ -1,5 +1,6 @@
 package ris58h.androidkeymaps.intellij.kl
 
+import com.intellij.icons.AllIcons
 import com.intellij.openapi.fileTypes.LanguageFileType
 import javax.swing.Icon
 
@@ -12,6 +13,5 @@ object KlFileType : LanguageFileType(KlLanguage) {
 
     override fun getDefaultExtension(): String = "kl"
 
-//    TODO
-    override fun getIcon(): Icon? = null
+    override fun getIcon(): Icon = AllIcons.FileTypes.Text
 }
