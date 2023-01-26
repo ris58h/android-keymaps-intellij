@@ -9,3 +9,4 @@ axis 0x05 invert BRAKE
 
 # https://source.android.com/docs/core/interaction/input/key-layout-files#center-flat-option
 axis 0x03 Z flat 4096
+axis 0x02 split 0x7f GAS BRAKE flat 4096
