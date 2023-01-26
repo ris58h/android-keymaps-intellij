@@ -36,6 +36,9 @@
                 displayName="Duplicate key"
                 enabledByDefault="true"
                 implementationClass="ris58h.androidkeymaps.intellij.idc.IdcDuplicateKeyInspection"/>
+        <lang.commenter
+                language="AndroidInputDeviceConfiguration"
+                implementationClass="ris58h.androidkeymaps.intellij.HashLineCommenter"/>
         <!-- Key Layout -->
         <fileType
                 name="AndroidKeyLayout"
@@ -56,5 +59,8 @@
                 displayName="Duplicate entries"
                 enabledByDefault="true"
                 implementationClass="ris58h.androidkeymaps.intellij.kl.KlDuplicateEntriesInspection"/>
+        <lang.commenter
+                language="AndroidKeyLayout"
+                implementationClass="ris58h.androidkeymaps.intellij.HashLineCommenter"/>
     </extensions>
 </idea-plugin>
