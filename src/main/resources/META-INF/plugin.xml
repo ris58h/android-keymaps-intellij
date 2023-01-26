@@ -62,5 +62,20 @@
         <lang.commenter
                 language="AndroidKeyLayout"
                 implementationClass="ris58h.androidkeymaps.intellij.HashLineCommenter"/>
+        <!-- Key Character Map -->
+        <fileType
+                name="AndroidKeyCharacterMap"
+                implementationClass="ris58h.androidkeymaps.intellij.kcm.KcmFileType"
+                language="AndroidKeyCharacterMap"
+                extensions="kcm"/>
+        <lang.parserDefinition
+                language="AndroidKeyCharacterMap"
+                implementationClass="ris58h.androidkeymaps.intellij.kcm.KcmParserDefinition"/>
+        <lang.syntaxHighlighterFactory
+                language="AndroidKeyCharacterMap"
+                implementationClass="ris58h.androidkeymaps.intellij.kcm.KcmSyntaxHighlighterFactory"/>
+        <lang.commenter
+                language="AndroidKeyCharacterMap"
+                implementationClass="ris58h.androidkeymaps.intellij.HashLineCommenter"/>
     </extensions>
 </idea-plugin>

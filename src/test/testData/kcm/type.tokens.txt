@@ -1,0 +1,5 @@
+KcmTokenType.COMMENT ('# https://source.android.com/docs/core/interaction/input/key-character-map-files#keyboard-type-declaration')
+WHITE_SPACE ('\n')
+KcmTokenType.TYPE_KEYWORD ('type')
+WHITE_SPACE (' ')
+KcmTokenType.LABEL ('OVERLAY')
