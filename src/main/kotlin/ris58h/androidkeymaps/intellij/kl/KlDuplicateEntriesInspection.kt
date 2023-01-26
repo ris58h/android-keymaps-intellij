@@ -55,7 +55,12 @@ class KlDuplicateEntriesInspection : LocalInspectionTool() {
                 val type = if (it.isUsage) "usage" else "scan code"
                 problemsHolder.registerProblem(it.codeElement!!, "Duplicate entry for key $type '${it.codeElement!!.text}'")
             }
-            //TODO key flags
+            val flags = mutableSetOf<String>()
+            it.keyFlagList.forEach {
+                if (!flags.add(it.text)) {
+                    problemsHolder.registerProblem(it, "Duplicate key flag '${it.text}'")
+                }
+            }
         }
 
         fun processAxisEntry(it: KlAxisEntry) {

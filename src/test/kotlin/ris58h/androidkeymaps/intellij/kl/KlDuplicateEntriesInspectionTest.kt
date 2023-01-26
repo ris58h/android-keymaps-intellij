@@ -20,6 +20,10 @@ class KlDuplicateEntriesInspectionTest : BasePlatformTestCase() {
         doFileTest()
     }
 
+    fun testDuplicateKeyFlag() {
+        doFileTest()
+    }
+
     fun testDuplicateAxis() {
         doFileTest()
     }
