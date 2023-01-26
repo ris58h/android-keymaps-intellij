@@ -48,5 +48,13 @@
         <lang.syntaxHighlighterFactory
                 language="AndroidKeyLayout"
                 implementationClass="ris58h.androidkeymaps.intellij.kl.KlSyntaxHighlighterFactory"/>
+        <localInspection
+                language="AndroidKeyLayout"
+                level="ERROR"
+                groupPath="Android,Keymaps"
+                groupName="Key layout"
+                displayName="Duplicate entries"
+                enabledByDefault="true"
+                implementationClass="ris58h.androidkeymaps.intellij.kl.KlDuplicateEntriesInspection"/>
     </extensions>
 </idea-plugin>
