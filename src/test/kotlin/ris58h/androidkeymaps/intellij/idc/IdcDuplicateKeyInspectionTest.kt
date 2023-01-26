@@ -11,8 +11,12 @@ class IdcDuplicateKeyInspectionTest : BasePlatformTestCase() {
         EditorTestUtil.checkEditorHighlighting(myFixture, "$testDataPath/$testName.highlights.txt", null)
     }
 
-    fun testDuplicateKey() {
+    override fun setUp() {
+        super.setUp()
         myFixture.enableInspections(IdcDuplicateKeyInspection::class.java)
+    }
+
+    fun testDuplicateKey() {
         doFileTest()
     }
 }

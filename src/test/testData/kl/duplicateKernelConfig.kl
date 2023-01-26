@@ -1,0 +1,2 @@
+requires_kernel_config CONFIG_HID_PLAYSTATION
+requires_kernel_config CONFIG_HID_PLAYSTATION

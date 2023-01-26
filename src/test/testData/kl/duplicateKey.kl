@@ -1,0 +1,8 @@
+key 114             VOLUME_DOWN
+key 114             VOLUME_DOWN
+key usage 114       VOLUME_DOWN
+key usage 114       VOLUME_DOWN
+key 0x0C006F        BRIGHTNESS_UP
+key 0x0C006F        BRIGHTNESS_UP
+key usage 0x0C006F  BRIGHTNESS_UP
+key usage 0x0C006F  BRIGHTNESS_UP
