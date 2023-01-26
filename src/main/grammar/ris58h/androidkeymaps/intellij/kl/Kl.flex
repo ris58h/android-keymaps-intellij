@@ -39,25 +39,25 @@ RKC_KEYWORD="requires_kernel_config"
 
 %%
 
-<YYINITIAL> {END_OF_LINE_COMMENT}                           { yybegin(YYINITIAL); return KlTypes.COMMENT; }
+{END_OF_LINE_COMMENT}                           { return KlTypes.COMMENT; }
 
-<YYINITIAL> {NUMBER}                                        { yybegin(YYINITIAL); return KlTypes.NUMBER; }
-<YYINITIAL> {LABEL}                                         { yybegin(YYINITIAL); return KlTypes.LABEL; }
+{NUMBER}                                        { return KlTypes.NUMBER; }
+{LABEL}                                         { return KlTypes.LABEL; }
 
-<YYINITIAL> {KEY_KEYWORD}                                   { yybegin(YYINITIAL); return KlTypes.KEY_KEYWORD; }
-<YYINITIAL> {USAGE_KEYWORD}                                 { yybegin(YYINITIAL); return KlTypes.USAGE_KEYWORD; }
+{KEY_KEYWORD}                                   { return KlTypes.KEY_KEYWORD; }
+{USAGE_KEYWORD}                                 { return KlTypes.USAGE_KEYWORD; }
 
-<YYINITIAL> {AXIS_KEYWORD}                                  { yybegin(YYINITIAL); return KlTypes.AXIS_KEYWORD; }
-<YYINITIAL> {INVERT_KEYWORD}                                { yybegin(YYINITIAL); return KlTypes.INVERT_KEYWORD; }
-<YYINITIAL> {SPLIT_KEYWORD}                                 { yybegin(YYINITIAL); return KlTypes.SPLIT_KEYWORD; }
-<YYINITIAL> {FLAT_KEYWORD}                                  { yybegin(YYINITIAL); return KlTypes.FLAT_KEYWORD; }
+{AXIS_KEYWORD}                                  { return KlTypes.AXIS_KEYWORD; }
+{INVERT_KEYWORD}                                { return KlTypes.INVERT_KEYWORD; }
+{SPLIT_KEYWORD}                                 { return KlTypes.SPLIT_KEYWORD; }
+{FLAT_KEYWORD}                                  { return KlTypes.FLAT_KEYWORD; }
 
-<YYINITIAL> {LED_KEYWORD}                                   { yybegin(YYINITIAL); return KlTypes.LED_KEYWORD; }
+{LED_KEYWORD}                                   { return KlTypes.LED_KEYWORD; }
 
-<YYINITIAL> {SENSOR_KEYWORD}                                { yybegin(YYINITIAL); return KlTypes.SENSOR_KEYWORD; }
+{SENSOR_KEYWORD}                                { return KlTypes.SENSOR_KEYWORD; }
 
-<YYINITIAL> {RKC_KEYWORD}                                   { yybegin(YYINITIAL); return KlTypes.RKC_KEYWORD; }
+{RKC_KEYWORD}                                   { return KlTypes.RKC_KEYWORD; }
 
-({EOL}|{WHITE_SPACE})+                                      { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
+({EOL}|{WHITE_SPACE})+                          { return TokenType.WHITE_SPACE; }
 
-[^]                                                         { yybegin(YYINITIAL); return TokenType.BAD_CHARACTER; }
+[^]                                             { return TokenType.BAD_CHARACTER; }

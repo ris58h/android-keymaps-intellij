@@ -33,16 +33,15 @@ VALUE_CHARACTER=[^\n]
 
 %%
 
-<YYINITIAL> {END_OF_LINE_COMMENT}                           { yybegin(YYINITIAL); return IdcTypes.COMMENT; }
+<YYINITIAL> {
+    {END_OF_LINE_COMMENT}                           { yybegin(YYINITIAL); return IdcTypes.COMMENT; }
+    {KEY_CHARACTER}+                                { yybegin(YYINITIAL); return IdcTypes.KEY; }
+    {SEPARATOR}                                     { yybegin(WAITING_VALUE); return IdcTypes.SEPARATOR; }
+}
 
-<YYINITIAL> {KEY_CHARACTER}+                                { yybegin(YYINITIAL); return IdcTypes.KEY; }
+<WAITING_VALUE> {
+    {WHITE_SPACE}+                                  { yybegin(WAITING_VALUE); return TokenType.WHITE_SPACE; }
+    {FIRST_VALUE_CHARACTER}{VALUE_CHARACTER}*       { yybegin(YYINITIAL); return IdcTypes.VALUE; }
+}
 
-<YYINITIAL> {SEPARATOR}                                     { yybegin(WAITING_VALUE); return IdcTypes.SEPARATOR; }
-
-<WAITING_VALUE> {WHITE_SPACE}+                              { yybegin(WAITING_VALUE); return TokenType.WHITE_SPACE; }
-
-<WAITING_VALUE> {FIRST_VALUE_CHARACTER}{VALUE_CHARACTER}*   { yybegin(YYINITIAL); return IdcTypes.VALUE; }
-
-({EOL}|{WHITE_SPACE})+                                      { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
-
-[^]                                                         { yybegin(YYINITIAL); return TokenType.BAD_CHARACTER; }
+({EOL}|{WHITE_SPACE})+                              { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
