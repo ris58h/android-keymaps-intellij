@@ -52,6 +52,21 @@ tasks {
         purgeOldFiles.set(true)
     }
 
+    val generateKcmLexer = task<org.jetbrains.grammarkit.tasks.GenerateLexerTask>("generateKcmLexer") {
+        source.set("src/main/grammar/ris58h/androidkeymaps/intellij/kcm/Kcm.flex")
+        targetDir.set("src/main/gen/ris58h/androidkeymaps/intellij/kcm")
+        targetClass.set("KcmLexer")
+        purgeOldFiles.set(true)
+    }
+
+    val generateKcmParser = task<org.jetbrains.grammarkit.tasks.GenerateParserTask>("generateKcmParser"){
+        source.set("src/main/grammar/ris58h/androidkeymaps/intellij/kcm/Kcm.bnf")
+        targetRoot.set("src/main/gen")
+        pathToParser.set("/ris58h/androidkeymaps/intellij/kcm/parser/KcmParser.java")
+        pathToPsiRoot.set("/ris58h/androidkeymaps/intellij/kcm/psi")
+        purgeOldFiles.set(true)
+    }
+
     // Set the JVM compatibility versions
     withType<JavaCompile> {
         sourceCompatibility = "11"
@@ -63,7 +78,11 @@ tasks {
             freeCompilerArgs = listOf("-Xjvm-default=all")
         }
 
-        dependsOn(generateIdcLexer, generateIdcParser, generateKlLexer, generateKlParser)
+        dependsOn(
+            generateIdcLexer, generateIdcParser,
+            generateKlLexer, generateKlParser,
+            generateKcmLexer, generateKcmParser,
+        )
     }
 
     patchPluginXml {
