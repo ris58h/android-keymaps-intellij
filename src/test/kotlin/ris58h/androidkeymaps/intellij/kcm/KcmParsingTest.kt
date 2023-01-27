@@ -15,4 +15,8 @@ class KcmParsingTest : ParsingTestCase("", "kcm", true, KcmParserDefinition()) {
     fun testMap() {
         doFileTest()
     }
+
+    fun testKey() {
+        doFileTest()
+    }
 }

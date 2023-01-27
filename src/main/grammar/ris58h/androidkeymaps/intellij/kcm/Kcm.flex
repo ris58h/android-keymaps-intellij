@@ -32,6 +32,36 @@ MAP_KEYWORD="map"
 KEY_KEYWORD="key"
 USAGE_KEYWORD="usage"
 
+LBRACE="{"
+RBRACE="}"
+COMMA=","
+PROPERTY_NAME="label"|"number"
+BASE_MODIFIER="base"
+MODIFIER="shift"
+    |"lshift"
+    |"rshift"
+    |"alt"
+    |"lalt"
+    |"ralt"
+    |"ctrl"
+    |"lctrl"
+    |"rctrl"
+    |"meta"
+    |"lmeta"
+    |"rmeta"
+    |"sym"
+    |"fn"
+    |"capslock"
+    |"numlock"
+    |"scrolllock"
+PLUS="+"
+SEMICOLON=":"
+//TODO
+CHARACTER_LITERAL=\'.\'
+NONE_KEYWORD="none"
+FALLBACK_KEYWORD="fallback"
+REPLACE_KEYWORD="replace"
+
 %%
 
 <YYINITIAL> {
@@ -44,6 +74,17 @@ USAGE_KEYWORD="usage"
     {MAP_KEYWORD}                                   { yybegin(YYINITIAL); return KcmTypes.MAP_KEYWORD; }
     {KEY_KEYWORD}                                   { yybegin(YYINITIAL); return KcmTypes.KEY_KEYWORD; }
     {USAGE_KEYWORD}                                 { yybegin(YYINITIAL); return KcmTypes.USAGE_KEYWORD; }
+
+    {LBRACE}                                        { yybegin(YYINITIAL); return KcmTypes.LBRACE; }
+    {RBRACE}                                        { yybegin(YYINITIAL); return KcmTypes.RBRACE; }
+    {COMMA}                                         { yybegin(YYINITIAL); return KcmTypes.COMMA; }
+    {PROPERTY_NAME}|{BASE_MODIFIER}|({MODIFIER}({PLUS}{MODIFIER})*) { yybegin(YYINITIAL); return KcmTypes.PROPERTY_KEY; }
+    {SEMICOLON}                                     { yybegin(YYINITIAL); return KcmTypes.SEMICOLON; }
+
+    {CHARACTER_LITERAL}                             { yybegin(YYINITIAL); return KcmTypes.CHARACTER_LITERAL; }
+    {NONE_KEYWORD}                                  { yybegin(YYINITIAL); return KcmTypes.NONE_KEYWORD; }
+    {FALLBACK_KEYWORD}                              { yybegin(YYINITIAL); return KcmTypes.FALLBACK_KEYWORD; }
+    {REPLACE_KEYWORD}                               { yybegin(YYINITIAL); return KcmTypes.REPLACE_KEYWORD; }
 }
 
 ({EOL}|{WHITE_SPACE})+                              { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }

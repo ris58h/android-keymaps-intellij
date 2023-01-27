@@ -21,4 +21,8 @@ class KcmLexerTest : LexerTestCase() {
     fun testMap() {
         doFileTest()
     }
+
+    fun testKey() {
+        doFileTest()
+    }
 }
