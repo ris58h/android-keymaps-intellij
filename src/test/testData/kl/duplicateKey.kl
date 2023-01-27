@@ -1,7 +1,7 @@
-key 114             VOLUME_DOWN
-key 114             VOLUME_DOWN
-key usage 114       VOLUME_DOWN
-key usage 114       VOLUME_DOWN
+key 114             NUMPAD_0
+key 114             NUMPAD_0
+key usage 114       NUMPAD_0
+key usage 114       NUMPAD_0
 key 0x0C006F        BRIGHTNESS_UP
 key 0x0C006F        BRIGHTNESS_UP
 key usage 0x0C006F  BRIGHTNESS_UP
