@@ -6,8 +6,10 @@
     <vendor email="ris58h@gmail.com" url="https://github.com/ris58h">Ilya Rodionov</vendor>
 
     <description><![CDATA[
-    Syntax highlighting for Android Keymaps: key layouts (.kl), key character maps (.kcm),
-   input device configurations (.idc).
+    Android keymap files support:
+    <a href="https://source.android.com/docs/core/interaction/input/key-layout-files">key layouts</a> (.kl),
+    <a href="https://source.android.com/docs/core/interaction/input/key-character-map-files">key character maps</a> (.kcm),
+    <a href="https://source.android.com/docs/core/interaction/input/input-device-configuration-files">input device configurations</a> (.idc).
   ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
