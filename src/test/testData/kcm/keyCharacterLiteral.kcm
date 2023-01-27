@@ -1,0 +1,11 @@
+type OVERLAY
+
+key NUMPAD_0 {
+    base:                 '0'
+    label:                '\n'
+    number:               '\t'
+    ctrl:                 '\\'
+    alt:                  '\''
+    meta:                 '"'
+    numlock:              '\u01fA'
+}

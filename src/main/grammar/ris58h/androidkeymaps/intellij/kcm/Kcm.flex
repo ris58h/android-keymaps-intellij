@@ -56,14 +56,13 @@ MODIFIER="shift"
     |"scrolllock"
 PLUS="+"
 SEMICOLON=":"
-//TODO
 CHARACTER_LITERAL=\'.\'
-    |"'\n'"
-    |"'\t'"
-    |"'\\'"
-    |"'\''"
-    |"'\"'"
-    |"'\u"[0-9a-fA-F]{4}
+    | (\'\\n\')
+    | (\'\\t\')
+    | (\'\\\\\')
+    | (\'\\\'\')
+    | (\'\\\"\')
+    | (\'\\u[0-9a-fA-F]{4}\')
 NONE_KEYWORD="none"
 FALLBACK_KEYWORD="fallback"
 REPLACE_KEYWORD="replace"
