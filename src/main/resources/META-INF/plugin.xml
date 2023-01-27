@@ -77,5 +77,8 @@
         <lang.commenter
                 language="AndroidKeyCharacterMap"
                 implementationClass="ris58h.androidkeymaps.intellij.HashLineCommenter"/>
+        <lang.foldingBuilder
+                language="AndroidKeyCharacterMap"
+                implementationClass="ris58h.androidkeymaps.intellij.kcm.KcmFoldingBuilder"/>
     </extensions>
 </idea-plugin>

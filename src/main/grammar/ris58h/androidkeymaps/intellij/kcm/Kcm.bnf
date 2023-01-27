@@ -29,11 +29,11 @@ map_entry ::= MAP_KEYWORD KEY_KEYWORD USAGE_KEYWORD? NUMBER (LABEL|NUMBER) {
     recoverWhile="recovery_entry"
 }
 
-key_entry ::= KEY_KEYWORD (LABEL|NUMBER) key_block {
+key_entry ::= KEY_KEYWORD (LABEL|NUMBER) key_properties_block {
     pin=1
     recoverWhile="recovery_entry"
 }
-private key_block ::= LBRACE key_property* RBRACE
+key_properties_block ::= LBRACE key_property* RBRACE
 key_property ::= PROPERTY_KEY (COMMA PROPERTY_KEY)* SEMICOLON property_value
 private property_value ::= CHARACTER_LITERAL|NONE_KEYWORD
                          | (FALLBACK_KEYWORD LABEL|NUMBER)
