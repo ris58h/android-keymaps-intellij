@@ -18,5 +18,6 @@ Android Key Character Map file
     PsiWhiteSpace(' ')
     PsiElement(KcmTokenType.KEY_KEYWORD)('key')
     PsiWhiteSpace(' ')
-    PsiElement(KcmTokenType.NUMBER)('1 ')
+    PsiElement(KcmTokenType.NUMBER)('1')
+    PsiWhiteSpace(' ')
     PsiElement(KcmTokenType.LABEL)('CAPS_LOCK')

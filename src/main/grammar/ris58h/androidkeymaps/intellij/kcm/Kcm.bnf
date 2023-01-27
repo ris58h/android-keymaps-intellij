@@ -24,7 +24,7 @@ type_declaration ::= TYPE_KEYWORD LABEL {
     recoverWhile="recovery_entry"
 }
 
-map_entry ::= MAP_KEYWORD KEY_KEYWORD USAGE_KEYWORD? NUMBER LABEL {
+map_entry ::= MAP_KEYWORD KEY_KEYWORD USAGE_KEYWORD? NUMBER (LABEL|NUMBER) {
     pin=1
     recoverWhile="recovery_entry"
 }
@@ -35,4 +35,6 @@ key_entry ::= KEY_KEYWORD (LABEL|NUMBER) key_block {
 }
 private key_block ::= LBRACE key_property* RBRACE
 key_property ::= PROPERTY_KEY (COMMA PROPERTY_KEY)* SEMICOLON property_value
-private property_value ::= CHARACTER_LITERAL|NONE_KEYWORD|(FALLBACK_KEYWORD LABEL)|(REPLACE_KEYWORD LABEL)
+private property_value ::= CHARACTER_LITERAL|NONE_KEYWORD
+                         | (FALLBACK_KEYWORD LABEL|NUMBER)
+                         | (REPLACE_KEYWORD LABEL|NUMBER)
