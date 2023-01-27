@@ -69,29 +69,27 @@ REPLACE_KEYWORD="replace"
 
 %%
 
-<YYINITIAL> {
-    {END_OF_LINE_COMMENT}                           { yybegin(YYINITIAL); return KcmTypes.COMMENT; }
+{END_OF_LINE_COMMENT}                           { return KcmTypes.COMMENT; }
 
-    {NUMBER}                                        { yybegin(YYINITIAL); return KcmTypes.NUMBER; }
-    {LABEL}                                         { yybegin(YYINITIAL); return KcmTypes.LABEL; }
+{NUMBER}                                        { return KcmTypes.NUMBER; }
+{LABEL}                                         { return KcmTypes.LABEL; }
 
-    {TYPE_KEYWORD}                                  { yybegin(YYINITIAL); return KcmTypes.TYPE_KEYWORD; }
-    {MAP_KEYWORD}                                   { yybegin(YYINITIAL); return KcmTypes.MAP_KEYWORD; }
-    {KEY_KEYWORD}                                   { yybegin(YYINITIAL); return KcmTypes.KEY_KEYWORD; }
-    {USAGE_KEYWORD}                                 { yybegin(YYINITIAL); return KcmTypes.USAGE_KEYWORD; }
+{TYPE_KEYWORD}                                  { return KcmTypes.TYPE_KEYWORD; }
+{MAP_KEYWORD}                                   { return KcmTypes.MAP_KEYWORD; }
+{KEY_KEYWORD}                                   { return KcmTypes.KEY_KEYWORD; }
+{USAGE_KEYWORD}                                 { return KcmTypes.USAGE_KEYWORD; }
 
-    {LBRACE}                                        { yybegin(YYINITIAL); return KcmTypes.LBRACE; }
-    {RBRACE}                                        { yybegin(YYINITIAL); return KcmTypes.RBRACE; }
-    {COMMA}                                         { yybegin(YYINITIAL); return KcmTypes.COMMA; }
-    {PROPERTY_NAME}|{BASE_MODIFIER}|({MODIFIER}({PLUS}{MODIFIER})*) { yybegin(YYINITIAL); return KcmTypes.PROPERTY_KEY; }
-    {SEMICOLON}                                     { yybegin(YYINITIAL); return KcmTypes.SEMICOLON; }
+{LBRACE}                                        { return KcmTypes.LBRACE; }
+{RBRACE}                                        { return KcmTypes.RBRACE; }
+{COMMA}                                         { return KcmTypes.COMMA; }
+{PROPERTY_NAME}|{BASE_MODIFIER}|({MODIFIER}({PLUS}{MODIFIER})*) { return KcmTypes.PROPERTY_KEY; }
+{SEMICOLON}                                     { return KcmTypes.SEMICOLON; }
 
-    {CHARACTER_LITERAL}                             { yybegin(YYINITIAL); return KcmTypes.CHARACTER_LITERAL; }
-    {NONE_KEYWORD}                                  { yybegin(YYINITIAL); return KcmTypes.NONE_KEYWORD; }
-    {FALLBACK_KEYWORD}                              { yybegin(YYINITIAL); return KcmTypes.FALLBACK_KEYWORD; }
-    {REPLACE_KEYWORD}                               { yybegin(YYINITIAL); return KcmTypes.REPLACE_KEYWORD; }
-}
+{CHARACTER_LITERAL}                             { return KcmTypes.CHARACTER_LITERAL; }
+{NONE_KEYWORD}                                  { return KcmTypes.NONE_KEYWORD; }
+{FALLBACK_KEYWORD}                              { return KcmTypes.FALLBACK_KEYWORD; }
+{REPLACE_KEYWORD}                               { return KcmTypes.REPLACE_KEYWORD; }
 
-({EOL}|{WHITE_SPACE})+                              { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
+({EOL}|{WHITE_SPACE})+                          { return TokenType.WHITE_SPACE; }
 
-[^]                                                 { yybegin(YYINITIAL); return TokenType.BAD_CHARACTER; }
+[^]                                             { return TokenType.BAD_CHARACTER; }
