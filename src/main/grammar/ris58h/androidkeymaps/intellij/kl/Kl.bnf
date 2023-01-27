@@ -19,7 +19,7 @@ private item ::= COMMENT|entry
 private entry ::= key_entry|axis_entry|led_entry|sensor_entry|rkc_entry
 private recovery_entry ::= !(KEY_KEYWORD|AXIS_KEYWORD|LED_KEYWORD|SENSOR_KEYWORD|RKC_KEYWORD)
 
-key_entry ::= KEY_KEYWORD USAGE_KEYWORD? NUMBER LABEL key_flags? {
+key_entry ::= KEY_KEYWORD USAGE_KEYWORD? NUMBER (LABEL|NUMBER) key_flags? {
    pin=1
    recoverWhile="recovery_entry"
    implements="ris58h.androidkeymaps.intellij.kl.psi.UsageEntry"

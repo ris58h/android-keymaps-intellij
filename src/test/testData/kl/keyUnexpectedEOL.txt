@@ -8,7 +8,7 @@ Android Key Layout file
     PsiElement(KlTokenType.KEY_KEYWORD)('key')
     PsiWhiteSpace(' ')
     PsiElement(KlTokenType.NUMBER)('114')
-    PsiErrorElement:KlTokenType.LABEL expected, got 'key'
+    PsiErrorElement:KlTokenType.LABEL or KlTokenType.NUMBER expected, got 'key'
       <empty list>
   PsiWhiteSpace('\n')
   KlKeyEntryImpl(KEY_ENTRY)
@@ -24,5 +24,5 @@ Android Key Layout file
     PsiElement(KlTokenType.USAGE_KEYWORD)('usage')
     PsiWhiteSpace(' ')
     PsiElement(KlTokenType.NUMBER)('114')
-    PsiErrorElement:KlTokenType.LABEL expected
+    PsiErrorElement:KlTokenType.LABEL or KlTokenType.NUMBER expected
       <empty list>

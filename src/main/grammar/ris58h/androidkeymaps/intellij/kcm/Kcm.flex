@@ -25,7 +25,7 @@ EOL=\n
 WHITE_SPACE=[\ \t\r]
 END_OF_LINE_COMMENT=("#")[^\r\n]*
 LABEL=[A-Z][A-Z_0-9]*
-NUMBER=(("0x")[0-9a-fA-F]*)|([0-9][^x][0-9]*)
+NUMBER=("0x")[0-9a-fA-F]*|[0-9]+
 
 TYPE_KEYWORD="type"
 MAP_KEYWORD="map"

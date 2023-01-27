@@ -1,8 +1,8 @@
 # https://source.android.com/docs/core/interaction/input/key-layout-files#key-declarations
 key 114             NUMPAD_0
 key usage 114       NUMPAD_0
-key 16              Q               VIRTUAL
-key usage 16        Q               VIRTUAL
+key 16              1               VIRTUAL
+key usage 16        1               VIRTUAL
 key 0x0C006F        BRIGHTNESS_UP
 key usage 0x0C006F  BRIGHTNESS_UP
 key usage 0x0C0066  BRIGHTNESS_UP   VIRTUAL FUNCTION GESTURE WAKE
