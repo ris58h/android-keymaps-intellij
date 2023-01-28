@@ -64,6 +64,9 @@
         <lang.commenter
                 language="AndroidKeyLayout"
                 implementationClass="ris58h.androidkeymaps.intellij.HashLineCommenter"/>
+        <annotator
+                language="AndroidKeyLayout"
+                implementationClass="ris58h.androidkeymaps.intellij.kl.KlAnnotator"/>
         <!-- Key Character Map -->
         <fileType
                 name="AndroidKeyCharacterMap"
