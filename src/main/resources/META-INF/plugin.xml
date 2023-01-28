@@ -12,6 +12,8 @@
     <a href="https://source.android.com/docs/core/interaction/input/input-device-configuration-files">input device configurations</a> (.idc).
   ]]></description>
 
+    <idea-version since-build="201"/>
+
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">

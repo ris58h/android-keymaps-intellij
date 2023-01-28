@@ -19,6 +19,8 @@ intellij {
     type.set("IC") // Target IDE Platform
 
     plugins.set(listOf(/* Plugin Dependencies */))
+
+    updateSinceUntilBuild.set(false)
 }
 
 tasks {
@@ -83,11 +85,6 @@ tasks {
             generateKlLexer, generateKlParser,
             generateKcmLexer, generateKcmParser,
         )
-    }
-
-    patchPluginXml {
-        sinceBuild.set("213")
-        untilBuild.set("223.*")
     }
 
     signPlugin {
