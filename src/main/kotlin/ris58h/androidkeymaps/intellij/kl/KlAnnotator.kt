@@ -15,21 +15,22 @@ import ris58h.androidkeymaps.intellij.kl.psi.KlSensorEntry
 class KlAnnotator : Annotator {
     override fun annotate(element: PsiElement, holder: AnnotationHolder) {
         if (element.elementType == TokenType.WHITE_SPACE
-            && element.text.contains('\n')) {
-            if (element.parent is KlKeyEntry || element.parent?.parent is KlKeyEntry) {
-                annotateNewlineError("Key ", element, holder)
+            && element.text.contains('\n')
+        ) {
+            if (element.parent is KlKeyEntry) {
+                annotateNewlineError("Key", element, holder)
             }
             if (element.parent is KlAxisEntry) {
-                annotateNewlineError("Axis ", element, holder)
+                annotateNewlineError("Axis", element, holder)
             }
             if (element.parent is KlLedEntry) {
-                annotateNewlineError("Led ", element, holder)
+                annotateNewlineError("Led", element, holder)
             }
             if (element.parent is KlSensorEntry) {
-                annotateNewlineError("Sensor ", element, holder)
+                annotateNewlineError("Sensor", element, holder)
             }
             if (element.parent is KlRkcEntry) {
-                annotateNewlineError("Kernel config ", element, holder)
+                annotateNewlineError("Kernel config", element, holder)
             }
         }
     }
