@@ -21,5 +21,4 @@ property ::= KEY SEPARATOR VALUE? {
   pin=1
   recoverWhile="recover_property"
 }
-
-private recover_property ::= !(KEY|SEPARATOR|VALUE|COMMENT)
+private recover_property ::= !(KEY)
