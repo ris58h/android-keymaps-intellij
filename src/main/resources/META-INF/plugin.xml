@@ -88,5 +88,8 @@
         <annotator
                 language="AndroidKeyCharacterMap"
                 implementationClass="ris58h.androidkeymaps.intellij.kcm.KcmAnnotator"/>
+        <lang.braceMatcher
+                language="AndroidKeyCharacterMap"
+                implementationClass="ris58h.androidkeymaps.intellij.kcm.KcmPairedBraceMatcher"/>
     </extensions>
 </idea-plugin>
