@@ -7,9 +7,9 @@
 
     <description><![CDATA[
     Android keymap files support:
-    <a href="https://source.android.com/docs/core/interaction/input/key-layout-files">key layouts</a> (.kl),
-    <a href="https://source.android.com/docs/core/interaction/input/key-character-map-files">key character maps</a> (.kcm),
-    <a href="https://source.android.com/docs/core/interaction/input/input-device-configuration-files">input device configurations</a> (.idc).
+    <a href="https://source.android.com/docs/core/interaction/input/key-layout-files">key layout</a> (.kl),
+    <a href="https://source.android.com/docs/core/interaction/input/key-character-map-files">key character map</a> (.kcm),
+    <a href="https://source.android.com/docs/core/interaction/input/input-device-configuration-files">input device configuration</a> (.idc).
   ]]></description>
 
     <idea-version since-build="201"/>
