@@ -27,11 +27,13 @@ type_declaration ::= TYPE_KEYWORD LABEL {
 map_entry ::= MAP_KEYWORD KEY_KEYWORD USAGE_KEYWORD? NUMBER (LABEL|NUMBER) {
     pin=1
     recoverWhile="recovery_entry"
+    implements="ris58h.androidkeymaps.intellij.kcm.psi.KcmMapEntryMixin"
 }
 
 key_entry ::= KEY_KEYWORD (LABEL|NUMBER) key_properties_block {
     pin=1
     recoverWhile="recovery_entry"
+    implements="ris58h.androidkeymaps.intellij.kcm.psi.KcmKeyEntryMixin"
 }
 key_properties_block ::= LBRACE key_property* RBRACE
 key_property ::= PROPERTY_KEY (COMMA PROPERTY_KEY)* SEMICOLON property_value

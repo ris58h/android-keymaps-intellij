@@ -93,5 +93,13 @@
         <lang.braceMatcher
                 language="AndroidKeyCharacterMap"
                 implementationClass="ris58h.androidkeymaps.intellij.kcm.KcmPairedBraceMatcher"/>
+        <localInspection
+                language="AndroidKeyCharacterMap"
+                level="ERROR"
+                groupPath="Android,Keymaps"
+                groupName="Key character map"
+                displayName="Duplicate entries"
+                enabledByDefault="true"
+                implementationClass="ris58h.androidkeymaps.intellij.kcm.KcmDuplicateEntriesInspection"/>
     </extensions>
 </idea-plugin>
