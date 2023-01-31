@@ -62,6 +62,31 @@ class KcmDuplicateEntriesInspection : LocalInspectionTool() {
             if (key != null && !keys.add(key)) {
                 problemsHolder.registerProblem(it.keyElement!!, "Duplicate entry for key '$key'")
             }
+            var hasLabel = false
+            var hasNumber = false
+            it.keyPropertiesBlock?.keyPropertyList
+                ?.flatMap { it.keyPropertyKeys.keyPropertyKeyList }
+                ?.forEach {
+                    val propertyKey = it.text
+                    if (propertyKey != null) {
+                        if (propertyKey == "label") {
+                            if (hasLabel) {
+                                problemsHolder.registerProblem(it, "Duplicate label for key")
+                            } else {
+                                hasLabel = true
+                            }
+                        }
+                        if (propertyKey == "number") {
+                            if (hasNumber) {
+                                problemsHolder.registerProblem(it, "Duplicate label for number")
+                            } else {
+                                hasNumber = true
+                            }
+                        }
+                        //TODO Duplicate key behavior for modifier
+                        //TODO Duplicate modifier combination
+                    }
+                }
         }
     }
 }
