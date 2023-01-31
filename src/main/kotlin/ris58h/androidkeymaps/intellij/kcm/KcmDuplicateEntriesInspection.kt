@@ -6,10 +6,7 @@ import com.intellij.codeInspection.ProblemDescriptor
 import com.intellij.codeInspection.ProblemsHolder
 import com.intellij.psi.PsiFile
 import com.intellij.psi.SyntaxTraverser
-import ris58h.androidkeymaps.intellij.kcm.psi.KcmFile
-import ris58h.androidkeymaps.intellij.kcm.psi.KcmKeyEntry
-import ris58h.androidkeymaps.intellij.kcm.psi.KcmMapEntry
-import ris58h.androidkeymaps.intellij.kcm.psi.KcmTypeDeclaration
+import ris58h.androidkeymaps.intellij.kcm.psi.*
 
 class KcmDuplicateEntriesInspection : LocalInspectionTool() {
     override fun checkFile(file: PsiFile, manager: InspectionManager, isOnTheFly: Boolean): Array<ProblemDescriptor>? {
@@ -62,31 +59,52 @@ class KcmDuplicateEntriesInspection : LocalInspectionTool() {
             if (key != null && !keys.add(key)) {
                 problemsHolder.registerProblem(it.keyElement!!, "Duplicate entry for key '$key'")
             }
+            it.keyPropertiesBlock?.keyPropertyList?.let { processKeyProperties(it) }
+        }
+
+        private fun processKeyProperties(properties: List<KcmKeyProperty>) {
             var hasLabel = false
             var hasNumber = false
-            it.keyPropertiesBlock?.keyPropertyList
-                ?.flatMap { it.keyPropertyKeys.keyPropertyKeyList }
-                ?.forEach {
-                    val propertyKey = it.text
-                    if (propertyKey != null) {
-                        if (propertyKey == "label") {
-                            if (hasLabel) {
-                                problemsHolder.registerProblem(it, "Duplicate label for key")
-                            } else {
-                                hasLabel = true
-                            }
+            val modifierCombinations = mutableSetOf<String>()
+            properties.flatMap { it.keyPropertyKeys.keyPropertyKeyList }.forEach {
+                when (it.text) {
+                    null -> {}
+                    "label" -> {
+                        //TODO duplicate property 'label: none' is actually valid
+                        if (hasLabel) {
+                            problemsHolder.registerProblem(it, "Duplicate label for key")
+                        } else {
+                            hasLabel = true
                         }
-                        if (propertyKey == "number") {
-                            if (hasNumber) {
-                                problemsHolder.registerProblem(it, "Duplicate label for number")
-                            } else {
-                                hasNumber = true
-                            }
+                    }
+                    "number" -> {
+                        //TODO duplicate property 'number: none' is actually valid
+                        if (hasNumber) {
+                            problemsHolder.registerProblem(it, "Duplicate label for number")
+                        } else {
+                            hasNumber = true
                         }
-                        //TODO Duplicate key behavior for modifier
-                        //TODO Duplicate modifier combination
+                    }
+                    else -> {
+                        val modifiers = it.text.split('+')
+                        if (hasDuplicates(modifiers)) {
+                            problemsHolder.registerProblem(it, "Duplicate modifier combination '${it.text}'")
+                        }
+                        val modifierCombination = modifiers.sorted().joinToString("+")
+                        if (!modifierCombinations.add(modifierCombination)) {
+                            problemsHolder.registerProblem(it, "Duplicate key behavior for modifier")
+                        }
                     }
                 }
+            }
         }
     }
+}
+
+private fun <T> hasDuplicates(list: List<T>): Boolean {
+    val set = mutableSetOf<T>()
+    for (it in list) {
+        if (!set.add(it)) return true
+    }
+    return false
 }
