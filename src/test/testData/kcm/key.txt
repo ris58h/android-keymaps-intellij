@@ -37,6 +37,8 @@ Android Key Character Map file
         PsiElement(KcmTokenType.FALLBACK_KEYWORD)('fallback')
         PsiWhiteSpace(' ')
         PsiElement(KcmTokenType.LABEL)('INSERT')
+        PsiWhiteSpace(' ')
+        PsiElement(KcmTokenType.NONE_KEYWORD)('none')
       PsiWhiteSpace('\n    ')
       KcmKeyPropertyImpl(KEY_PROPERTY)
         KcmKeyPropertyKeysImpl(KEY_PROPERTY_KEYS)

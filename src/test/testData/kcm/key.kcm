@@ -2,7 +2,7 @@ type OVERLAY
 
 key NUMPAD_0 {
     label, number, ctrl:                '0'
-    base:                               fallback INSERT
+    base:                               fallback INSERT none
     numlock:                            replace INSERT
     fn,fn+sym,fn+sym+meta:              none
 }

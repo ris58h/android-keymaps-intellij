@@ -36,9 +36,10 @@ key_entry ::= KEY_KEYWORD (LABEL|NUMBER) key_properties_block {
     implements="ris58h.androidkeymaps.intellij.kcm.psi.KcmKeyEntryMixin"
 }
 key_properties_block ::= LBRACE key_property* RBRACE
-key_property ::= key_property_keys SEMICOLON property_value
+key_property ::= key_property_keys SEMICOLON key_property_values
 key_property_keys ::= key_property_key (COMMA key_property_key)*
 key_property_key ::= PROPERTY_KEY
-private property_value ::= CHARACTER_LITERAL|NONE_KEYWORD
+private key_property_values ::= key_property_value*
+private key_property_value ::= CHARACTER_LITERAL|NONE_KEYWORD
                          | (FALLBACK_KEYWORD LABEL|NUMBER)
                          | (REPLACE_KEYWORD LABEL|NUMBER)
