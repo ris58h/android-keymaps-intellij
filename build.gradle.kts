@@ -15,8 +15,8 @@ repositories {
 // Configure Gradle IntelliJ Plugin
 // Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
-    version.set("2020.1") // Build against 'since' version
-//    version.set("LATEST-EAP-SNAPSHOT") // Check against 'latest' version
+//    version.set("2020.1") // Build against 'since' version
+    version.set("LATEST-EAP-SNAPSHOT") // Check against 'latest' version
     type.set("IC") // Target IDE Platform
 
     plugins.set(listOf(/* Plugin Dependencies */))
