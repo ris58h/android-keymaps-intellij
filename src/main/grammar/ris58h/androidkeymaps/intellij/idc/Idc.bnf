@@ -20,5 +20,6 @@ private item ::= property|COMMENT
 property ::= KEY SEPARATOR VALUE? {
   pin=1
   recoverWhile="recover_property"
+  implements="ris58h.androidkeymaps.intellij.idc.psi.IdcPropertyMixin"
 }
 private recover_property ::= !(KEY)

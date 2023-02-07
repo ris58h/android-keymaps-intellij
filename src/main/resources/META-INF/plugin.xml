@@ -43,6 +43,9 @@
         <lang.commenter
                 language="AndroidInputDeviceConfiguration"
                 implementationClass="ris58h.androidkeymaps.intellij.HashLineCommenter"/>
+        <lang.psiStructureViewFactory
+                language="AndroidInputDeviceConfiguration"
+                implementationClass="ris58h.androidkeymaps.intellij.idc.IdcStructureViewFactory"/>
         <!-- Key Layout -->
         <fileType
                 name="AndroidKeyLayout"
