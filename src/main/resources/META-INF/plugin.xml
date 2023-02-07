@@ -28,7 +28,7 @@
                 implementationClass="ris58h.androidkeymaps.intellij.idc.IdcParserDefinition"/>
         <lang.syntaxHighlighterFactory
                 language="AndroidInputDeviceConfiguration"
-                implementationClass="ris58h.androidkeymaps.intellij.idc.IdcSyntaxHighlighterFactory"/>
+                implementationClass="ris58h.androidkeymaps.intellij.idc.IdcSyntaxHighlighter$Factory"/>
         <annotator
                 language="AndroidInputDeviceConfiguration"
                 implementationClass="ris58h.androidkeymaps.intellij.idc.IdcAnnotator"/>
@@ -57,7 +57,7 @@
                 implementationClass="ris58h.androidkeymaps.intellij.kl.KlParserDefinition"/>
         <lang.syntaxHighlighterFactory
                 language="AndroidKeyLayout"
-                implementationClass="ris58h.androidkeymaps.intellij.kl.KlSyntaxHighlighterFactory"/>
+                implementationClass="ris58h.androidkeymaps.intellij.kl.KlSyntaxHighlighter$Factory"/>
         <localInspection
                 language="AndroidKeyLayout"
                 level="ERROR"
@@ -83,7 +83,7 @@
                 implementationClass="ris58h.androidkeymaps.intellij.kcm.KcmParserDefinition"/>
         <lang.syntaxHighlighterFactory
                 language="AndroidKeyCharacterMap"
-                implementationClass="ris58h.androidkeymaps.intellij.kcm.KcmSyntaxHighlighterFactory"/>
+                implementationClass="ris58h.androidkeymaps.intellij.kcm.KcmSyntaxHighlighter$Factory"/>
         <lang.commenter
                 language="AndroidKeyCharacterMap"
                 implementationClass="ris58h.androidkeymaps.intellij.HashLineCommenter"/>

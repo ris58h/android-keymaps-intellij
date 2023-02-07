@@ -4,12 +4,21 @@ import com.intellij.lexer.Lexer
 import com.intellij.openapi.editor.DefaultLanguageHighlighterColors
 import com.intellij.openapi.editor.HighlighterColors
 import com.intellij.openapi.editor.colors.TextAttributesKey
+import com.intellij.openapi.fileTypes.SyntaxHighlighter
 import com.intellij.openapi.fileTypes.SyntaxHighlighterBase
+import com.intellij.openapi.fileTypes.SyntaxHighlighterFactory
+import com.intellij.openapi.project.Project
+import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.psi.TokenType
 import com.intellij.psi.tree.IElementType
 import ris58h.androidkeymaps.intellij.kl.psi.KlTypes
 
 class KlSyntaxHighlighter : SyntaxHighlighterBase() {
+    class Factory : SyntaxHighlighterFactory() {
+        override fun getSyntaxHighlighter(project: Project?, virtualFile: VirtualFile?): SyntaxHighlighter =
+            KlSyntaxHighlighter()
+    }
+
     companion object {
         val KEYWORD: TextAttributesKey =
             TextAttributesKey.createTextAttributesKey("KL_KEYWORD", DefaultLanguageHighlighterColors.KEYWORD)
