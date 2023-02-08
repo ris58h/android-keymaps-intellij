@@ -2,6 +2,7 @@
   parserClass="ris58h.androidkeymaps.intellij.kl.parser.KlParser"
 
   extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+  extends(".*_entry")=entry
 
   psiClassPrefix="Kl"
   psiImplClassSuffix="Impl"
@@ -16,7 +17,7 @@
 klFile ::= item*
 
 private item ::= COMMENT|entry
-private entry ::= key_entry|axis_entry|led_entry|sensor_entry|rkc_entry
+entry ::= key_entry|axis_entry|led_entry|sensor_entry|rkc_entry
 private recovery_entry ::= !(KEY_KEYWORD|AXIS_KEYWORD|LED_KEYWORD|SENSOR_KEYWORD|RKC_KEYWORD)
 
 key_entry ::= KEY_KEYWORD USAGE_KEYWORD? NUMBER (LABEL|NUMBER) key_flags? {

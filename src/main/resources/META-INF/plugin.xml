@@ -72,6 +72,9 @@
         <annotator
                 language="AndroidKeyLayout"
                 implementationClass="ris58h.androidkeymaps.intellij.kl.KlAnnotator"/>
+        <lang.psiStructureViewFactory
+                language="AndroidKeyLayout"
+                implementationClass="ris58h.androidkeymaps.intellij.kl.KlStructureViewFactory"/>
         <!-- Key Character Map -->
         <fileType
                 name="AndroidKeyCharacterMap"
