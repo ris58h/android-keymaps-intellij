@@ -9,8 +9,13 @@ import com.intellij.openapi.editor.Editor
 import com.intellij.psi.NavigatablePsiElement
 import com.intellij.psi.PsiFile
 import com.intellij.psi.util.PsiTreeUtil
+import ris58h.androidkeymaps.intellij.kl.psi.KlAxisEntry
 import ris58h.androidkeymaps.intellij.kl.psi.KlFile
 import ris58h.androidkeymaps.intellij.kl.psi.KlEntry
+import ris58h.androidkeymaps.intellij.kl.psi.KlKeyEntry
+import ris58h.androidkeymaps.intellij.kl.psi.KlLedEntry
+import ris58h.androidkeymaps.intellij.kl.psi.KlRkcEntry
+import ris58h.androidkeymaps.intellij.kl.psi.KlSensorEntry
 import ris58h.androidkeymaps.intellij.kl.psi.impl.KlEntryImpl
 
 class KlStructureViewFactory : PsiStructureViewFactory {
@@ -58,8 +63,27 @@ class KlStructureViewElement(private val myElement: NavigatablePsiElement) : Str
     }
 
     override fun getPresentation(): ItemPresentation {
-        if (myElement is KlEntry) {
-            return PresentationData(myElement.getText(), null, null, null)
+        if (myElement is KlKeyEntry) {
+            val code = myElement.code
+            val isUsage = myElement.isUsage
+            return PresentationData("map key${if (isUsage) " usage" else "" } $code", null, null, null)
+        }
+        if (myElement is KlAxisEntry) {
+            val code = myElement.code
+            return PresentationData("axis $code", null, null, null)
+        }
+        if (myElement is KlLedEntry) {
+            val code = myElement.code
+            val isUsage = myElement.isUsage
+            return PresentationData("led${if (isUsage) " usage" else "" } $code", null, null, null)
+        }
+        if (myElement is KlSensorEntry) {
+            val code = myElement.code
+            return PresentationData("sensor $code", null, null, null)
+        }
+        if (myElement is KlRkcEntry) {
+            val configName = myElement.configName
+            return PresentationData("requires_kernel_config $configName", null, null, null)
         }
         return myElement.presentation ?: PresentationData()
     }
