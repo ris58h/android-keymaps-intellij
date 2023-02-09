@@ -24,7 +24,7 @@ class KcmDuplicateEntriesInspection : LocalInspectionTool() {
         SyntaxTraverser.psiTraverser(file)
             .forEach {
                 when (it) {
-                    is KcmTypeDeclaration -> duplicatesProcessor.processTypeDeclaration(it)
+                    is KcmTypeEntry -> duplicatesProcessor.processTypeDeclaration(it)
                     is KcmMapEntry -> duplicatesProcessor.processMapEntry(it)
                     is KcmKeyEntry -> duplicatesProcessor.processKeyEntry(it)
                 }
@@ -37,7 +37,7 @@ class KcmDuplicateEntriesInspection : LocalInspectionTool() {
         val keyUsageCodes = mutableSetOf<Long>()
         val keys = mutableSetOf<String>()
 
-        fun processTypeDeclaration(it: KcmTypeDeclaration) {
+        fun processTypeDeclaration(it: KcmTypeEntry) {
             if (hasTypeDeclaration) {
                 problemsHolder.registerProblem(it, "Duplicate keyboard 'type' declaration")
             } else {

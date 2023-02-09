@@ -8,14 +8,14 @@ import com.intellij.psi.TokenType
 import com.intellij.psi.util.elementType
 import ris58h.androidkeymaps.intellij.kcm.psi.KcmKeyProperty
 import ris58h.androidkeymaps.intellij.kcm.psi.KcmMapEntry
-import ris58h.androidkeymaps.intellij.kcm.psi.KcmTypeDeclaration
+import ris58h.androidkeymaps.intellij.kcm.psi.KcmTypeEntry
 
 class KcmAnnotator : Annotator {
     override fun annotate(element: PsiElement, holder: AnnotationHolder) {
         if (element.elementType == TokenType.WHITE_SPACE
             && element.text.contains('\n')
         ) {
-            if (element.parent is KcmTypeDeclaration) {
+            if (element.parent is KcmTypeEntry) {
                 annotateNewlineError("Type declaration", element, holder)
             }
             if (element.parent is KcmMapEntry) {

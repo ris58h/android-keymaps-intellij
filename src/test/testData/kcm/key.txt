@@ -1,5 +1,5 @@
 Android Key Character Map file
-  KcmTypeDeclarationImpl(TYPE_DECLARATION)
+  KcmTypeEntryImpl(TYPE_ENTRY)
     PsiElement(KcmTokenType.TYPE_KEYWORD)('type')
     PsiWhiteSpace(' ')
     PsiElement(KcmTokenType.LABEL)('OVERLAY')

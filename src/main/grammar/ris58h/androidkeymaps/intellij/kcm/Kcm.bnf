@@ -2,6 +2,7 @@
   parserClass="ris58h.androidkeymaps.intellij.kcm.parser.KcmParser"
 
   extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+  extends(".*_entry")=entry
 
   psiClassPrefix="Kcm"
   psiImplClassSuffix="Impl"
@@ -16,10 +17,10 @@
 kcmFile ::= item*
 
 private item ::= COMMENT|entry
-private entry ::= type_declaration|map_entry|key_entry
+entry ::= type_entry|map_entry|key_entry
 private recovery_entry ::= !(TYPE_KEYWORD|MAP_KEYWORD|KEY_KEYWORD)
 
-type_declaration ::= TYPE_KEYWORD LABEL {
+type_entry ::= TYPE_KEYWORD LABEL {
     pin=1
     recoverWhile="recovery_entry"
 }

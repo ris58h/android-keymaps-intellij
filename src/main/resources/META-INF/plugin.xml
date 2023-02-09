@@ -107,5 +107,8 @@
                 displayName="Duplicate entries"
                 enabledByDefault="true"
                 implementationClass="ris58h.androidkeymaps.intellij.kcm.KcmDuplicateEntriesInspection"/>
+        <lang.psiStructureViewFactory
+                language="AndroidKeyCharacterMap"
+                implementationClass="ris58h.androidkeymaps.intellij.kcm.KcmStructureViewFactory"/>
     </extensions>
 </idea-plugin>

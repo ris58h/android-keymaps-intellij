@@ -1,7 +1,7 @@
 Android Key Character Map file
   PsiComment(KcmTokenType.COMMENT)('# https://source.android.com/docs/core/interaction/input/key-character-map-files#keyboard-type-declaration')
   PsiWhiteSpace('\n')
-  KcmTypeDeclarationImpl(TYPE_DECLARATION)
+  KcmTypeEntryImpl(TYPE_ENTRY)
     PsiElement(KcmTokenType.TYPE_KEYWORD)('type')
     PsiWhiteSpace(' ')
     PsiElement(KcmTokenType.LABEL)('OVERLAY')
