@@ -64,25 +64,25 @@ class KlStructureViewElement(private val myElement: NavigatablePsiElement) : Str
 
     override fun getPresentation(): ItemPresentation {
         if (myElement is KlKeyEntry) {
-            val code = myElement.code
+            val code = myElement.code ?: ""
             val isUsage = myElement.isUsage
-            return PresentationData("map key${if (isUsage) " usage" else "" } $code", null, null, null)
+            return PresentationData("key${if (isUsage) " usage" else "" } $code", null, null, null)
         }
         if (myElement is KlAxisEntry) {
-            val code = myElement.code
+            val code = myElement.code ?: ""
             return PresentationData("axis $code", null, null, null)
         }
         if (myElement is KlLedEntry) {
-            val code = myElement.code
+            val code = myElement.code ?: ""
             val isUsage = myElement.isUsage
             return PresentationData("led${if (isUsage) " usage" else "" } $code", null, null, null)
         }
         if (myElement is KlSensorEntry) {
-            val code = myElement.code
+            val code = myElement.code ?: ""
             return PresentationData("sensor $code", null, null, null)
         }
         if (myElement is KlRkcEntry) {
-            val configName = myElement.configName
+            val configName = myElement.configName ?: ""
             return PresentationData("requires_kernel_config $configName", null, null, null)
         }
         return myElement.presentation ?: PresentationData()

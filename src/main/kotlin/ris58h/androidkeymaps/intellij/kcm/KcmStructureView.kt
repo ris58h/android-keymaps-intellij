@@ -62,12 +62,12 @@ class KcmStructureViewElement(private val myElement: NavigatablePsiElement) : St
 
     override fun getPresentation(): ItemPresentation {
         if (myElement is KcmMapEntry) {
-            val code = myElement.code
+            val code = myElement.code ?: ""
             val isUsage = myElement.isUsage
             return PresentationData("map key${if (isUsage) " usage" else "" } $code", null, null, null)
         }
         if (myElement is KcmKeyEntry) {
-            val key = myElement.key
+            val key = myElement.key ?: ""
             return PresentationData("key $key", null, null, null)
         }
         return myElement.presentation ?: PresentationData()
