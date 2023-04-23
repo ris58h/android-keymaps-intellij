@@ -30,7 +30,7 @@ class KlParserDefinition : ParserDefinition {
 
     override fun getStringLiteralElements(): TokenSet = TokenSet.EMPTY
 
-    override fun createElement(node: ASTNode?): PsiElement = KlTypes.Factory.createElement(node)
+    override fun createElement(node: ASTNode): PsiElement = KlTypes.Factory.createElement(node)
 
     override fun createFile(viewProvider: FileViewProvider): PsiFile = KlFile(viewProvider)
 }

@@ -30,7 +30,7 @@ class IdcParserDefinition : ParserDefinition {
 
     override fun getStringLiteralElements(): TokenSet = TokenSet.EMPTY
 
-    override fun createElement(node: ASTNode?): PsiElement = IdcTypes.Factory.createElement(node)
+    override fun createElement(node: ASTNode): PsiElement = IdcTypes.Factory.createElement(node)
 
     override fun createFile(viewProvider: FileViewProvider): PsiFile = IdcFile(viewProvider)
 }

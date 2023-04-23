@@ -30,7 +30,7 @@ class KcmParserDefinition : ParserDefinition {
 
     override fun getStringLiteralElements(): TokenSet = TokenSet.EMPTY
 
-    override fun createElement(node: ASTNode?): PsiElement = KcmTypes.Factory.createElement(node)
+    override fun createElement(node: ASTNode): PsiElement = KcmTypes.Factory.createElement(node)
 
     override fun createFile(viewProvider: FileViewProvider): PsiFile = KcmFile(viewProvider)
 }
