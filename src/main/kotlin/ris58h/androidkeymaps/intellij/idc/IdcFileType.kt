@@ -2,7 +2,6 @@ package ris58h.androidkeymaps.intellij.idc
 
 import com.intellij.icons.AllIcons
 import com.intellij.openapi.fileTypes.LanguageFileType
-import ris58h.androidkeymaps.intellij.kcm.KcmFileType
 import javax.swing.Icon
 
 class IdcFileType : LanguageFileType(IdcLanguage) {
