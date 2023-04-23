@@ -7,7 +7,7 @@ import ris58h.androidkeymaps.intellij.idc.IdcFileType
 import ris58h.androidkeymaps.intellij.idc.IdcLanguage
 
 class IdcFile(viewProvider: FileViewProvider) : PsiFileBase(viewProvider, IdcLanguage) {
-    override fun getFileType(): FileType = IdcFileType
+    override fun getFileType(): FileType = IdcFileType.INSTANCE
 
     override fun toString(): String {
         return "Android Input Device Configuration file"

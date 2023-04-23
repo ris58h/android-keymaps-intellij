@@ -7,7 +7,7 @@ import ris58h.androidkeymaps.intellij.kcm.KcmFileType
 import ris58h.androidkeymaps.intellij.kcm.KcmLanguage
 
 class KcmFile(viewProvider: FileViewProvider) : PsiFileBase(viewProvider, KcmLanguage) {
-    override fun getFileType(): FileType = KcmFileType
+    override fun getFileType(): FileType = KcmFileType.INSTANCE
 
     override fun toString(): String {
         return "Android Key Character Map file"
