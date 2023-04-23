@@ -12,8 +12,6 @@ repositories {
     mavenCentral()
 }
 
-// Configure Gradle IntelliJ Plugin
-// Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
     version.set("2020.1") // Build against 'since' version
 //    version.set("LATEST-EAP-SNAPSHOT") // Check against 'latest' version
@@ -25,52 +23,34 @@ intellij {
 }
 
 tasks {
-    val generateIdcLexer = task<org.jetbrains.grammarkit.tasks.GenerateLexerTask>("generateIdcLexer") {
-        source.set("src/main/grammar/ris58h/androidkeymaps/intellij/idc/Idc.flex")
-        targetDir.set("src/main/gen/ris58h/androidkeymaps/intellij/idc")
-        targetClass.set("IdcLexer")
-        purgeOldFiles.set(true)
+    fun generateLexerTask(lang: String): Task {
+        val dir = lang.toLowerCase()
+        return task<org.jetbrains.grammarkit.tasks.GenerateLexerTask>("generate${lang}Lexer") {
+            source.set("src/main/grammar/ris58h/androidkeymaps/intellij/${dir}/${lang}.flex")
+            targetDir.set("src/main/gen/ris58h/androidkeymaps/intellij/${dir}")
+            targetClass.set("${lang}Lexer")
+            purgeOldFiles.set(true)
+        }
     }
 
-    val generateIdcParser = task<org.jetbrains.grammarkit.tasks.GenerateParserTask>("generateIdcParser"){
-        source.set("src/main/grammar/ris58h/androidkeymaps/intellij/idc/Idc.bnf")
-        targetRoot.set("src/main/gen")
-        pathToParser.set("/ris58h/androidkeymaps/intellij/idc/parser/IdcParser.java")
-        pathToPsiRoot.set("/ris58h/androidkeymaps/intellij/idc/psi")
-        purgeOldFiles.set(true)
+    fun generateParserTask(lang: String): Task {
+        val dir = lang.toLowerCase()
+        return task<org.jetbrains.grammarkit.tasks.GenerateParserTask>("generate${lang}Parser"){
+            source.set("src/main/grammar/ris58h/androidkeymaps/intellij/${dir}/${lang}.bnf")
+            targetRoot.set("src/main/gen")
+            pathToParser.set("/ris58h/androidkeymaps/intellij/${dir}/parser/${lang}Parser.java")
+            pathToPsiRoot.set("/ris58h/androidkeymaps/intellij/${dir}/psi")
+            purgeOldFiles.set(true)
+        }
     }
 
-    val generateKlLexer = task<org.jetbrains.grammarkit.tasks.GenerateLexerTask>("generateKlLexer") {
-        source.set("src/main/grammar/ris58h/androidkeymaps/intellij/kl/Kl.flex")
-        targetDir.set("src/main/gen/ris58h/androidkeymaps/intellij/kl")
-        targetClass.set("KlLexer")
-        purgeOldFiles.set(true)
-    }
+    val generateIdcLexer = generateLexerTask("Idc")
+    val generateIdcParser = generateParserTask("Idc")
+    val generateKlLexer = generateLexerTask("Kl")
+    val generateKlParser = generateParserTask("Kl")
+    val generateKcmLexer = generateLexerTask("Kcm")
+    val generateKcmParser = generateParserTask("Kcm")
 
-    val generateKlParser = task<org.jetbrains.grammarkit.tasks.GenerateParserTask>("generateKlParser"){
-        source.set("src/main/grammar/ris58h/androidkeymaps/intellij/kl/Kl.bnf")
-        targetRoot.set("src/main/gen")
-        pathToParser.set("/ris58h/androidkeymaps/intellij/kl/parser/KlParser.java")
-        pathToPsiRoot.set("/ris58h/androidkeymaps/intellij/kl/psi")
-        purgeOldFiles.set(true)
-    }
-
-    val generateKcmLexer = task<org.jetbrains.grammarkit.tasks.GenerateLexerTask>("generateKcmLexer") {
-        source.set("src/main/grammar/ris58h/androidkeymaps/intellij/kcm/Kcm.flex")
-        targetDir.set("src/main/gen/ris58h/androidkeymaps/intellij/kcm")
-        targetClass.set("KcmLexer")
-        purgeOldFiles.set(true)
-    }
-
-    val generateKcmParser = task<org.jetbrains.grammarkit.tasks.GenerateParserTask>("generateKcmParser"){
-        source.set("src/main/grammar/ris58h/androidkeymaps/intellij/kcm/Kcm.bnf")
-        targetRoot.set("src/main/gen")
-        pathToParser.set("/ris58h/androidkeymaps/intellij/kcm/parser/KcmParser.java")
-        pathToPsiRoot.set("/ris58h/androidkeymaps/intellij/kcm/psi")
-        purgeOldFiles.set(true)
-    }
-
-    // Set the JVM compatibility versions
     withType<JavaCompile> {
         sourceCompatibility = "11"
         targetCompatibility = "11"
