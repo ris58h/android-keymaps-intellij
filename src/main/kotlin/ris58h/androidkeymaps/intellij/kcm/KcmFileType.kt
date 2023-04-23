@@ -7,8 +7,6 @@ import javax.swing.Icon
 object KcmFileType : LanguageFileType(KcmLanguage) {
     override fun getName(): String = "AndroidKeyCharacterMap"
 
-    override fun getDisplayName(): String = "Android Key Character Map"
-
     override fun getDescription(): String = "Android Key Character Map file"
 
     override fun getDefaultExtension(): String = "kcm"
