@@ -4,8 +4,8 @@ import com.intellij.psi.PsiElement
 
 interface KcmKeyEntryMixin : PsiElement {
     val key: String?
-        get() = node.findChildByType(LABEL_OR_NUMBER)?.text
+        get() = node.findChildByType(KcmTokenSets.LABEL_OR_NUMBER)?.text
 
     val keyElement: PsiElement?
-        get() = node.findChildByType(LABEL_OR_NUMBER)?.psi
+        get() = node.findChildByType(KcmTokenSets.LABEL_OR_NUMBER)?.psi
 }

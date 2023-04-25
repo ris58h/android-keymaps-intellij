@@ -11,8 +11,8 @@ import com.intellij.psi.PsiFile
 import com.intellij.psi.tree.IFileElementType
 import com.intellij.psi.tree.TokenSet
 import ris58h.androidkeymaps.intellij.kcm.parser.KcmParser
-import ris58h.androidkeymaps.intellij.kcm.psi.COMMENTS
 import ris58h.androidkeymaps.intellij.kcm.psi.KcmFile
+import ris58h.androidkeymaps.intellij.kcm.psi.KcmTokenSets
 import ris58h.androidkeymaps.intellij.kcm.psi.KcmTypes
 
 class KcmParserDefinition : ParserDefinition {
@@ -26,7 +26,7 @@ class KcmParserDefinition : ParserDefinition {
 
     override fun getFileNodeType(): IFileElementType = FILE
 
-    override fun getCommentTokens(): TokenSet = COMMENTS
+    override fun getCommentTokens(): TokenSet = KcmTokenSets.COMMENTS
 
     override fun getStringLiteralElements(): TokenSet = TokenSet.EMPTY
 

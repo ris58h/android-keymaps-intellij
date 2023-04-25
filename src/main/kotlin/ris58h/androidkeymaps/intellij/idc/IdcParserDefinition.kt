@@ -11,8 +11,8 @@ import com.intellij.psi.PsiFile
 import com.intellij.psi.tree.IFileElementType
 import com.intellij.psi.tree.TokenSet
 import ris58h.androidkeymaps.intellij.idc.parser.IdcParser
-import ris58h.androidkeymaps.intellij.idc.psi.COMMENTS
 import ris58h.androidkeymaps.intellij.idc.psi.IdcFile
+import ris58h.androidkeymaps.intellij.idc.psi.IdcTokenSets
 import ris58h.androidkeymaps.intellij.idc.psi.IdcTypes
 
 class IdcParserDefinition : ParserDefinition {
@@ -26,7 +26,7 @@ class IdcParserDefinition : ParserDefinition {
 
     override fun getFileNodeType(): IFileElementType = FILE
 
-    override fun getCommentTokens(): TokenSet = COMMENTS
+    override fun getCommentTokens(): TokenSet = IdcTokenSets.COMMENTS
 
     override fun getStringLiteralElements(): TokenSet = TokenSet.EMPTY
 

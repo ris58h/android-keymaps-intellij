@@ -4,7 +4,6 @@ import com.intellij.lexer.Lexer
 import com.intellij.openapi.editor.DefaultLanguageHighlighterColors
 import com.intellij.openapi.editor.HighlighterColors
 import com.intellij.openapi.editor.colors.TextAttributesKey
-import com.intellij.openapi.editor.colors.TextAttributesKey.createTextAttributesKey
 import com.intellij.openapi.fileTypes.SyntaxHighlighter
 import com.intellij.openapi.fileTypes.SyntaxHighlighterBase
 import com.intellij.openapi.fileTypes.SyntaxHighlighterFactory
@@ -21,20 +20,11 @@ class IdcSyntaxHighlighter : SyntaxHighlighterBase() {
     }
 
     companion object {
-        val SEPARATOR: TextAttributesKey =
-            createTextAttributesKey("IDC_SEPARATOR", DefaultLanguageHighlighterColors.OPERATION_SIGN)
-        val KEY: TextAttributesKey = createTextAttributesKey("IDC_KEY", DefaultLanguageHighlighterColors.KEYWORD)
-        val VALUE: TextAttributesKey = createTextAttributesKey("IDC_VALUE", DefaultLanguageHighlighterColors.STRING)
-        val COMMENT: TextAttributesKey =
-            createTextAttributesKey("IDC_COMMENT", DefaultLanguageHighlighterColors.LINE_COMMENT)
-        val BAD_CHARACTER: TextAttributesKey =
-            createTextAttributesKey("IDC_BAD_CHARACTER", HighlighterColors.BAD_CHARACTER)
-
-        private val BAD_CHAR_KEYS = arrayOf(BAD_CHARACTER)
-        private val SEPARATOR_KEYS = arrayOf(SEPARATOR)
-        private val KEY_KEYS = arrayOf(KEY)
-        private val VALUE_KEYS = arrayOf(VALUE)
-        private val COMMENT_KEYS = arrayOf(COMMENT)
+        private val BAD_CHAR_KEYS = arrayOf(HighlighterColors.BAD_CHARACTER)
+        private val SEPARATOR_KEYS = arrayOf(DefaultLanguageHighlighterColors.OPERATION_SIGN)
+        private val KEY_KEYS = arrayOf(DefaultLanguageHighlighterColors.KEYWORD)
+        private val VALUE_KEYS = arrayOf(DefaultLanguageHighlighterColors.STRING)
+        private val COMMENT_KEYS = arrayOf(DefaultLanguageHighlighterColors.LINE_COMMENT)
         private val EMPTY_KEYS = arrayOf<TextAttributesKey>()
     }
 
