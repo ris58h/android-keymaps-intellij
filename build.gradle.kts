@@ -17,8 +17,6 @@ intellij {
 //    version.set("LATEST-EAP-SNAPSHOT") // Check against 'latest' version
     type.set("IC") // Target IDE Platform
 
-    plugins.set(listOf(/* Plugin Dependencies */))
-
     updateSinceUntilBuild.set(false)
 }
 
