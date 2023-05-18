@@ -12,7 +12,7 @@
     <a href="https://source.android.com/docs/core/interaction/input/input-device-configuration-files">input device configuration</a> (.idc).
   ]]></description>
 
-    <idea-version since-build="201.6668.113"/>
+    <idea-version since-build="203"/>
 
     <depends>com.intellij.modules.platform</depends>
 

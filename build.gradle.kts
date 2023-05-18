@@ -13,7 +13,7 @@ repositories {
 }
 
 intellij {
-    version.set("2020.1") // Build against 'since' version
+    version.set("2020.3") // Build against 'since' version
 //    version.set("LATEST-EAP-SNAPSHOT") // Check against 'latest' version
     type.set("IC") // Target IDE Platform
 
