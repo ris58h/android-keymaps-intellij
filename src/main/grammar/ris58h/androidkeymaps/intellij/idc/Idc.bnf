@@ -13,9 +13,11 @@
   tokenTypeClass="ris58h.androidkeymaps.intellij.idc.psi.IdcTokenType"
 }
 
-idcFile ::= item*
+idcFile ::= property*
 
-private item ::= property|COMMENT
+// Comments are ignored by PsiBuilder (see ParserDefinition.getCommentTokens),
+// but we need them mentioned somewhere in BNF-file to generate corresponding IElementType.
+private comment ::= COMMENT
 
 property ::= KEY SEPARATOR VALUE? {
   pin=1

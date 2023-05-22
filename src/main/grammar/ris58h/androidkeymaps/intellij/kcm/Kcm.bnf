@@ -14,9 +14,12 @@
   tokenTypeClass="ris58h.androidkeymaps.intellij.kcm.psi.KcmTokenType"
 }
 
-kcmFile ::= item*
+kcmFile ::= entry*
 
-private item ::= COMMENT|entry
+// Comments are ignored by PsiBuilder (see ParserDefinition.getCommentTokens),
+// but we need them mentioned somewhere in BNF-file to generate corresponding IElementType.
+private comment ::= COMMENT
+
 entry ::= type_entry|map_entry|key_entry
 private recovery_entry ::= !(TYPE_KEYWORD|MAP_KEYWORD|KEY_KEYWORD)
 
