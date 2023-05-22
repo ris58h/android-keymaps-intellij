@@ -21,11 +21,10 @@ klFile ::= entry*
 private comment ::= COMMENT
 
 entry ::= key_entry|axis_entry|led_entry|sensor_entry|rkc_entry
-private recovery_entry ::= !(KEY_KEYWORD|AXIS_KEYWORD|LED_KEYWORD|SENSOR_KEYWORD|RKC_KEYWORD)
 
 key_entry ::= KEY_KEYWORD USAGE_KEYWORD? NUMBER (LABEL|NUMBER) key_flags? {
    pin=1
-   recoverWhile="recovery_entry"
+   recoverWhile="#auto"
    implements="ris58h.androidkeymaps.intellij.kl.psi.UsageEntry"
 }
 private key_flags ::= key_flag+
@@ -33,7 +32,7 @@ key_flag ::= LABEL
 
 axis_entry ::= AXIS_KEYWORD NUMBER (LABEL|axis_split|axis_invert) axis_flat? {
     pin=1
-    recoverWhile="recovery_entry"
+    recoverWhile="#auto"
     implements="ris58h.androidkeymaps.intellij.kl.psi.CodeEntry"
 }
 private axis_split ::= SPLIT_KEYWORD NUMBER LABEL LABEL
@@ -42,18 +41,18 @@ private axis_flat ::= FLAT_KEYWORD NUMBER
 
 led_entry ::= LED_KEYWORD USAGE_KEYWORD? NUMBER LABEL {
     pin=1
-    recoverWhile="recovery_entry"
+    recoverWhile="#auto"
     implements="ris58h.androidkeymaps.intellij.kl.psi.UsageEntry"
 }
 
 sensor_entry ::= SENSOR_KEYWORD NUMBER LABEL LABEL {
     pin=1
-    recoverWhile="recovery_entry"
+    recoverWhile="#auto"
     implements="ris58h.androidkeymaps.intellij.kl.psi.CodeEntry"
 }
 
 rkc_entry ::= RKC_KEYWORD LABEL {
     pin=1
-    recoverWhile="recovery_entry"
+    recoverWhile="#auto"
     implements="ris58h.androidkeymaps.intellij.kl.psi.RkcEntryMixin"
 }

@@ -21,22 +21,21 @@ kcmFile ::= entry*
 private comment ::= COMMENT
 
 entry ::= type_entry|map_entry|key_entry
-private recovery_entry ::= !(TYPE_KEYWORD|MAP_KEYWORD|KEY_KEYWORD)
 
 type_entry ::= TYPE_KEYWORD LABEL {
     pin=1
-    recoverWhile="recovery_entry"
+    recoverWhile="#auto"
 }
 
 map_entry ::= MAP_KEYWORD KEY_KEYWORD USAGE_KEYWORD? NUMBER (LABEL|NUMBER) {
     pin=1
-    recoverWhile="recovery_entry"
+    recoverWhile="#auto"
     implements="ris58h.androidkeymaps.intellij.kcm.psi.KcmMapEntryMixin"
 }
 
 key_entry ::= KEY_KEYWORD (LABEL|NUMBER) key_properties_block {
     pin=1
-    recoverWhile="recovery_entry"
+    recoverWhile="#auto"
     implements="ris58h.androidkeymaps.intellij.kcm.psi.KcmKeyEntryMixin"
 }
 key_properties_block ::= LBRACE key_property* RBRACE
