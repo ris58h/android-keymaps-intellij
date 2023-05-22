@@ -16,7 +16,5 @@ class IdcDuplicateKeyInspectionTest : BasePlatformTestCase() {
         myFixture.enableInspections(IdcDuplicateKeyInspection::class.java)
     }
 
-    fun testDuplicateKey() {
-        doFileTest()
-    }
+    fun testDuplicateKey() = doFileTest()
 }

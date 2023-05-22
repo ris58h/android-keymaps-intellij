@@ -16,27 +16,15 @@ class KlDuplicateEntriesInspectionTest : BasePlatformTestCase() {
         myFixture.enableInspections(KlDuplicateEntriesInspection::class.java)
     }
 
-    fun testDuplicateKey() {
-        doFileTest()
-    }
+    fun testDuplicateKey() = doFileTest()
 
-    fun testDuplicateKeyFlag() {
-        doFileTest()
-    }
+    fun testDuplicateKeyFlag() = doFileTest()
 
-    fun testDuplicateAxis() {
-        doFileTest()
-    }
+    fun testDuplicateAxis() = doFileTest()
 
-    fun testDuplicateLed() {
-        doFileTest()
-    }
+    fun testDuplicateLed() = doFileTest()
 
-    fun testDuplicateSensor() {
-        doFileTest()
-    }
+    fun testDuplicateSensor() = doFileTest()
 
-    fun testDuplicateKernelConfig() {
-        doFileTest()
-    }
+    fun testDuplicateKernelConfig() = doFileTest()
 }

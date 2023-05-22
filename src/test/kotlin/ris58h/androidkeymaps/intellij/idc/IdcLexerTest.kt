@@ -6,35 +6,19 @@ import com.intellij.testFramework.LexerTestCase
 class IdcLexerTest : LexerTestCase() {
     override fun createLexer(): Lexer = IdcLexerAdapter()
     override fun getDirPath(): String = "src/test/testData/idc"
-    override fun getPathToTestDataFile(extension: String): String {
-        return getDirPath() + "/" + getTestName(true) + extension
-    }
+    override fun getPathToTestDataFile(extension: String): String = getDirPath() + "/" + getTestName(true) + extension
     override fun getExpectedFileExtension(): String = ".tokens.txt"
-    private fun doFileTest() {
-        doFileTest("idc")
-    }
+    private fun doFileTest() = doFileTest("idc")
 
-    fun testHashes() {
-        doFileTest()
-    }
+    fun testHashes() = doFileTest()
 
-    fun testMissingEOL() {
-        doFileTest()
-    }
+    fun testMissingEOL() = doFileTest()
 
-    fun testMissingSeparator() {
-        doFileTest()
-    }
+    fun testMissingSeparator() = doFileTest()
 
-    fun testMissingSeparatorAndValue() {
-        doFileTest()
-    }
+    fun testMissingSeparatorAndValue() = doFileTest()
 
-    fun testMissingValue() {
-        doFileTest()
-    }
+    fun testMissingValue() = doFileTest()
 
-    fun testSimple() {
-        doFileTest()
-    }
+    fun testSimple() = doFileTest()
 }

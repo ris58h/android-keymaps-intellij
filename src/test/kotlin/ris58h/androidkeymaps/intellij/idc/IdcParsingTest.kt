@@ -8,27 +8,15 @@ class IdcParsingTest : ParsingTestCase("", "idc", true, IdcParserDefinition()) {
         doTest(true)
     }
 
-    fun testHashes() {
-        doFileTest()
-    }
+    fun testHashes() = doFileTest()
 
-    fun testMissingEOL() {
-        doFileTest()
-    }
+    fun testMissingEOL() = doFileTest()
 
-    fun testMissingSeparator() {
-        doFileTest()
-    }
+    fun testMissingSeparator() = doFileTest()
 
-    fun testMissingSeparatorAndValue() {
-        doFileTest()
-    }
+    fun testMissingSeparatorAndValue() = doFileTest()
 
-    fun testMissingValue() {
-        doFileTest()
-    }
+    fun testMissingValue() = doFileTest()
 
-    fun testSimple() {
-        doFileTest()
-    }
+    fun testSimple() = doFileTest()
 }

@@ -4,47 +4,25 @@ import com.intellij.testFramework.ParsingTestCase
 
 class KlParsingTest : ParsingTestCase("", "kl", true, KlParserDefinition()) {
     override fun getTestDataPath() = "src/test/testData/kl"
-    private fun doFileTest() {
-        doTest(true)
-    }
+    private fun doFileTest() = doTest(true)
 
-    fun testAxis() {
-        doFileTest()
-    }
+    fun testAxis() = doFileTest()
 
-    fun testAxisUnexpectedEOL() {
-        doFileTest()
-    }
+    fun testAxisUnexpectedEOL() = doFileTest()
 
-    fun testKey() {
-        doFileTest()
-    }
+    fun testKey() = doFileTest()
 
-    fun testKeyUnexpectedEOL() {
-        doFileTest()
-    }
+    fun testKeyUnexpectedEOL() = doFileTest()
 
-    fun testLed() {
-        doFileTest()
-    }
+    fun testLed() = doFileTest()
 
-    fun testLedUnexpectedEOL() {
-        doFileTest()
-    }
+    fun testLedUnexpectedEOL() = doFileTest()
 
-    fun testRequiresKernelConfig() {
-        doFileTest()
-    }
+    fun testRequiresKernelConfig() = doFileTest()
 
-    fun testRequiresKernelConfigUnexpectedEOL() {
-        doFileTest()
-    }
+    fun testRequiresKernelConfigUnexpectedEOL() = doFileTest()
 
-    fun testSensor() {
-        doFileTest()
-    }
+    fun testSensor() = doFileTest()
 
-    fun testSensorUnexpectedEOL() {
-        doFileTest()
-    }
+    fun testSensorUnexpectedEOL() = doFileTest()
 }

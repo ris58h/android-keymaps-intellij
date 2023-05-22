@@ -6,51 +6,27 @@ import com.intellij.testFramework.LexerTestCase
 class KlLexerTest : LexerTestCase() {
     override fun createLexer(): Lexer = KlLexerAdapter()
     override fun getDirPath(): String = "src/test/testData/kl"
-    override fun getPathToTestDataFile(extension: String): String {
-        return getDirPath() + "/" + getTestName(true) + extension
-    }
+    override fun getPathToTestDataFile(extension: String): String = getDirPath() + "/" + getTestName(true) + extension
     override fun getExpectedFileExtension(): String = ".tokens.txt"
-    private fun doFileTest() {
-        doFileTest("kl")
-    }
+    private fun doFileTest() = doFileTest("kl")
 
-    fun testAxis() {
-        doFileTest()
-    }
+    fun testAxis() = doFileTest()
 
-    fun testAxisUnexpectedEOL() {
-        doFileTest()
-    }
+    fun testAxisUnexpectedEOL() = doFileTest()
 
-    fun testKey() {
-        doFileTest()
-    }
+    fun testKey() = doFileTest()
 
-    fun testKeyUnexpectedEOL() {
-        doFileTest()
-    }
+    fun testKeyUnexpectedEOL() = doFileTest()
 
-    fun testLed() {
-        doFileTest()
-    }
+    fun testLed() = doFileTest()
 
-    fun testLedUnexpectedEOL() {
-        doFileTest()
-    }
+    fun testLedUnexpectedEOL() = doFileTest()
 
-    fun testRequiresKernelConfig() {
-        doFileTest()
-    }
+    fun testRequiresKernelConfig() = doFileTest()
 
-    fun testRequiresKernelConfigUnexpectedEOL() {
-        doFileTest()
-    }
+    fun testRequiresKernelConfigUnexpectedEOL() = doFileTest()
 
-    fun testSensor() {
-        doFileTest()
-    }
+    fun testSensor() = doFileTest()
 
-    fun testSensorUnexpectedEOL() {
-        doFileTest()
-    }
+    fun testSensorUnexpectedEOL() = doFileTest()
 }
