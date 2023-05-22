@@ -26,43 +26,25 @@ class IdcStructureViewFactory : PsiStructureViewFactory {
 class IdcStructureViewModel(editor: Editor?, psiFile: PsiFile) :
     StructureViewModelBase(psiFile, editor, IdcStructureViewElement(psiFile)),
     StructureViewModel.ElementInfoProvider {
-
-    override fun isAlwaysShowsPlus(element: StructureViewTreeElement?): Boolean {
-        return false
-    }
-
-    override fun isAlwaysLeaf(element: StructureViewTreeElement): Boolean {
-        return element.value is IdcProperty
-    }
-
-    override fun getSuitableClasses(): Array<Class<IdcProperty>> {
-        return arrayOf(IdcProperty::class.java)
-    }
+    override fun isAlwaysShowsPlus(element: StructureViewTreeElement?): Boolean = false
+    override fun isAlwaysLeaf(element: StructureViewTreeElement): Boolean = element.value is IdcProperty
+    override fun getSuitableClasses(): Array<Class<IdcProperty>> = arrayOf(IdcProperty::class.java)
 }
 
 class IdcStructureViewElement(private val myElement: NavigatablePsiElement) : StructureViewTreeElement {
-    override fun getValue(): Any {
-        return myElement
-    }
-
-    override fun navigate(requestFocus: Boolean) {
-        myElement.navigate(requestFocus)
-    }
-
-    override fun canNavigate(): Boolean {
-        return myElement.canNavigate()
-    }
-
-    override fun canNavigateToSource(): Boolean {
-        return myElement.canNavigateToSource()
-    }
+    override fun getValue(): Any = myElement
+    override fun navigate(requestFocus: Boolean) = myElement.navigate(requestFocus)
+    override fun canNavigate(): Boolean = myElement.canNavigate()
+    override fun canNavigateToSource(): Boolean = myElement.canNavigateToSource()
 
     override fun getPresentation(): ItemPresentation {
-        if (myElement is IdcProperty) {
-            val key = myElement.key ?: ""
-            return PresentationData(key, null, null, null)
+        return when (myElement) {
+            is IdcProperty -> {
+                val key = myElement.key ?: ""
+                PresentationData(key, null, null, null)
+            }
+            else -> myElement.presentation ?: PresentationData()
         }
-        return myElement.presentation ?: PresentationData()
     }
 
     override fun getChildren(): Array<TreeElement> {
