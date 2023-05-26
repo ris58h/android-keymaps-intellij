@@ -3,6 +3,7 @@ package ris58h.androidkeymaps.intellij.kcm
 import com.intellij.lang.annotation.AnnotationHolder
 import com.intellij.lang.annotation.Annotator
 import com.intellij.lang.annotation.HighlightSeverity
+import com.intellij.openapi.project.DumbAware
 import com.intellij.psi.PsiElement
 import com.intellij.psi.TokenType
 import com.intellij.psi.util.elementType
@@ -10,7 +11,7 @@ import ris58h.androidkeymaps.intellij.kcm.psi.KcmKeyProperty
 import ris58h.androidkeymaps.intellij.kcm.psi.KcmMapEntry
 import ris58h.androidkeymaps.intellij.kcm.psi.KcmTypeEntry
 
-class KcmAnnotator : Annotator {
+class KcmAnnotator : Annotator, DumbAware {
     override fun annotate(element: PsiElement, holder: AnnotationHolder) {
         if (element.elementType == TokenType.WHITE_SPACE
             && element.text.contains('\n')

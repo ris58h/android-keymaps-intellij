@@ -3,6 +3,7 @@ package ris58h.androidkeymaps.intellij.idc
 import com.intellij.lang.annotation.AnnotationHolder
 import com.intellij.lang.annotation.Annotator
 import com.intellij.lang.annotation.HighlightSeverity
+import com.intellij.openapi.project.DumbAware
 import com.intellij.psi.PsiElement
 import com.intellij.psi.TokenType
 import com.intellij.psi.util.elementType
@@ -11,7 +12,7 @@ import ris58h.androidkeymaps.intellij.idc.psi.IdcTypes
 
 private val RESERVED_CHARS = setOf(' ', '\\', '\"')
 
-class IdcAnnotator : Annotator {
+class IdcAnnotator : Annotator, DumbAware {
     override fun annotate(element: PsiElement, holder: AnnotationHolder) {
         if (element.elementType == IdcTypes.VALUE) {
             val value = element.text
