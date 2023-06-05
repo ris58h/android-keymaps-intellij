@@ -23,12 +23,14 @@ intellij {
     updateSinceUntilBuild.set(false)
 }
 
+val generatedSrcGrammarPath = buildDir.resolve("generated-src/grammar").path
+
 tasks {
     fun generateLexerTask(lang: String): Task {
         val dir = lang.toLowerCase()
         return task<org.jetbrains.grammarkit.tasks.GenerateLexerTask>("generate${lang}Lexer") {
             source.set("src/main/grammar/ris58h/androidkeymaps/intellij/${dir}/${lang}.flex")
-            targetDir.set("src/main/gen/ris58h/androidkeymaps/intellij/${dir}")
+            targetDir.set("${generatedSrcGrammarPath}/ris58h/androidkeymaps/intellij/${dir}")
             targetClass.set("${lang}Lexer")
             purgeOldFiles.set(true)
         }
@@ -38,7 +40,7 @@ tasks {
         val dir = lang.toLowerCase()
         return task<org.jetbrains.grammarkit.tasks.GenerateParserTask>("generate${lang}Parser"){
             source.set("src/main/grammar/ris58h/androidkeymaps/intellij/${dir}/${lang}.bnf")
-            targetRoot.set("src/main/gen")
+            targetRoot.set(generatedSrcGrammarPath)
             pathToParser.set("/ris58h/androidkeymaps/intellij/${dir}/parser/${lang}Parser.java")
             pathToPsiRoot.set("/ris58h/androidkeymaps/intellij/${dir}/psi")
             purgeOldFiles.set(true)
@@ -69,4 +71,4 @@ tasks {
     }
 }
 
-sourceSets["main"].java.srcDirs("src/main/gen")
+sourceSets["main"].java.srcDir(generatedSrcGrammarPath)
