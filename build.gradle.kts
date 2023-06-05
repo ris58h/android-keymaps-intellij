@@ -1,5 +1,5 @@
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.7.10"
+    id("org.jetbrains.kotlin.jvm") version "1.7.20"
     id("org.jetbrains.intellij") version "1.13.0"
     id("org.jetbrains.grammarkit") version "2021.2.2"
 }
@@ -9,6 +9,10 @@ version = "2.1"
 
 repositories {
     mavenCentral()
+}
+
+kotlin {
+    jvmToolchain(11)
 }
 
 intellij {
@@ -48,13 +52,8 @@ tasks {
     val generateKcmLexer = generateLexerTask("Kcm")
     val generateKcmParser = generateParserTask("Kcm")
 
-    withType<JavaCompile> {
-        sourceCompatibility = "11"
-        targetCompatibility = "11"
-    }
-    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    compileKotlin {
         kotlinOptions {
-            jvmTarget = "11"
             freeCompilerArgs = listOf("-Xjvm-default=all")
         }
 
@@ -67,16 +66,6 @@ tasks {
 
     buildSearchableOptions {
         enabled = false
-    }
-
-    signPlugin {
-        certificateChain.set(System.getenv("CERTIFICATE_CHAIN"))
-        privateKey.set(System.getenv("PRIVATE_KEY"))
-        password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
-    }
-
-    publishPlugin {
-        token.set(System.getenv("PUBLISH_TOKEN"))
     }
 }
 
