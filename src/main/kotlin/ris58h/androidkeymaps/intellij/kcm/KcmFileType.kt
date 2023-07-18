@@ -2,19 +2,17 @@ package ris58h.androidkeymaps.intellij.kcm
 
 import com.intellij.icons.AllIcons
 import com.intellij.openapi.fileTypes.LanguageFileType
-import javax.swing.Icon
 
 class KcmFileType : LanguageFileType(KcmLanguage) {
-    override fun getName(): String = "AndroidKeyCharacterMap"
+    override fun getName() = "AndroidKeyCharacterMap"
 
-    override fun getDescription(): String = "Android Key Character Map file"
+    override fun getDescription() = "Android Key Character Map file"
 
-    override fun getDefaultExtension(): String = "kcm"
+    override fun getDefaultExtension() = "kcm"
 
-    override fun getIcon(): Icon = AllIcons.FileTypes.Text
+    override fun getIcon() = AllIcons.FileTypes.Text
 
     companion object {
-        @JvmField
         val INSTANCE = KcmFileType()
     }
 }
