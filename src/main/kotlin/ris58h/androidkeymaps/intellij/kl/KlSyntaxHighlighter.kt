@@ -1,10 +1,6 @@
 package ris58h.androidkeymaps.intellij.kl
 
-import com.intellij.lexer.Lexer
-import com.intellij.openapi.editor.DefaultLanguageHighlighterColors
-import com.intellij.openapi.editor.HighlighterColors
 import com.intellij.openapi.editor.colors.TextAttributesKey
-import com.intellij.openapi.fileTypes.SyntaxHighlighter
 import com.intellij.openapi.fileTypes.SyntaxHighlighterBase
 import com.intellij.openapi.fileTypes.SyntaxHighlighterFactory
 import com.intellij.openapi.project.Project
@@ -16,37 +12,32 @@ import ris58h.androidkeymaps.intellij.kl.psi.KlTypes
 
 class KlSyntaxHighlighter : SyntaxHighlighterBase() {
     class Factory : SyntaxHighlighterFactory() {
-        override fun getSyntaxHighlighter(project: Project?, virtualFile: VirtualFile?): SyntaxHighlighter =
-            KlSyntaxHighlighter()
+        override fun getSyntaxHighlighter(project: Project?, virtualFile: VirtualFile?) = KlSyntaxHighlighter()
     }
 
-    companion object {
-        private val BAD_CHAR_KEYS = arrayOf(HighlighterColors.BAD_CHARACTER)
-        private val KEYWORD_KEYS = arrayOf(DefaultLanguageHighlighterColors.KEYWORD)
-        private val NUMBER_KEYS = arrayOf(DefaultLanguageHighlighterColors.NUMBER)
-        private val LABEL_KEYS = arrayOf(DefaultLanguageHighlighterColors.STRING)
-        private val COMMENT_KEYS = arrayOf(DefaultLanguageHighlighterColors.LINE_COMMENT)
-        private val EMPTY_KEYS = arrayOf<TextAttributesKey>()
-    }
-
-    override fun getHighlightingLexer(): Lexer = KlLexerAdapter()
+    override fun getHighlightingLexer() = KlLexerAdapter()
 
     override fun getTokenHighlights(tokenType: IElementType): Array<TextAttributesKey> {
+        val tokenColor = tokenColor(tokenType)
+        return if (tokenColor == null) TextAttributesKey.EMPTY_ARRAY else arrayOf(tokenColor)
+    }
+
+    private fun tokenColor(tokenType: IElementType): TextAttributesKey? {
         if (KlTokenSets.KEYWORDS.contains(tokenType)) {
-            return KEYWORD_KEYS
+            return KlHighlightingColors.KEYWORD
         }
         if (tokenType == KlTypes.NUMBER) {
-            return NUMBER_KEYS
+            return KlHighlightingColors.NUMBER
         }
         if (tokenType == KlTypes.LABEL) {
-            return LABEL_KEYS
+            return KlHighlightingColors.LABEL
         }
         if (tokenType == KlTypes.COMMENT) {
-            return COMMENT_KEYS
+            return KlHighlightingColors.COMMENT
         }
         if (tokenType == TokenType.BAD_CHARACTER) {
-            return BAD_CHAR_KEYS
+            return KlHighlightingColors.BAD_CHAR
         }
-        return EMPTY_KEYS
+        return null
     }
 }
