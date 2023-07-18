@@ -14,28 +14,25 @@ import ris58h.androidkeymaps.intellij.idc.psi.IdcProperty
 import ris58h.androidkeymaps.intellij.idc.psi.impl.IdcPropertyImpl
 
 class IdcStructureViewFactory : PsiStructureViewFactory {
-    override fun getStructureViewBuilder(psiFile: PsiFile): StructureViewBuilder {
-        return object : TreeBasedStructureViewBuilder() {
-            override fun createStructureViewModel(editor: Editor?): StructureViewModel {
-                return IdcStructureViewModel(editor, psiFile)
-            }
+    override fun getStructureViewBuilder(psiFile: PsiFile): StructureViewBuilder =
+        object : TreeBasedStructureViewBuilder() {
+            override fun createStructureViewModel(editor: Editor?) = createModel(psiFile, editor)
         }
-    }
 }
 
-class IdcStructureViewModel(editor: Editor?, psiFile: PsiFile) :
-    StructureViewModelBase(psiFile, editor, IdcStructureViewElement(psiFile)),
-    StructureViewModel.ElementInfoProvider {
-    override fun isAlwaysShowsPlus(element: StructureViewTreeElement?): Boolean = false
-    override fun isAlwaysLeaf(element: StructureViewTreeElement): Boolean = element.value is IdcProperty
-    override fun getSuitableClasses(): Array<Class<IdcProperty>> = arrayOf(IdcProperty::class.java)
+private fun createModel(psiFile: PsiFile, editor: Editor?): StructureViewModel {
+    return object : StructureViewModelBase(psiFile, editor, IdcStructureViewElement(psiFile)),
+        StructureViewModel.ElementInfoProvider {
+        override fun isAlwaysShowsPlus(element: StructureViewTreeElement?) = false
+        override fun isAlwaysLeaf(element: StructureViewTreeElement) = element.value is IdcProperty
+    }.withSuitableClasses(IdcProperty::class.java)
 }
 
 class IdcStructureViewElement(private val myElement: NavigatablePsiElement) : StructureViewTreeElement {
-    override fun getValue(): Any = myElement
+    override fun getValue() = myElement
     override fun navigate(requestFocus: Boolean) = myElement.navigate(requestFocus)
-    override fun canNavigate(): Boolean = myElement.canNavigate()
-    override fun canNavigateToSource(): Boolean = myElement.canNavigateToSource()
+    override fun canNavigate() = myElement.canNavigate()
+    override fun canNavigateToSource() = myElement.canNavigateToSource()
 
     override fun getPresentation(): ItemPresentation {
         return when (myElement) {

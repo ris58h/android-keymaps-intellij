@@ -15,7 +15,7 @@ class KcmFoldingBuilder : FoldingBuilderEx() {
             .toTypedArray()
     }
 
-    override fun getPlaceholderText(node: ASTNode): String? = null
+    override fun getPlaceholderText(node: ASTNode) = null
 
-    override fun isCollapsedByDefault(node: ASTNode): Boolean = false
+    override fun isCollapsedByDefault(node: ASTNode) = false
 }

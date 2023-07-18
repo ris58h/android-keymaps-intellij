@@ -17,28 +17,25 @@ import ris58h.androidkeymaps.intellij.kcm.psi.KcmTypeEntry
 import ris58h.androidkeymaps.intellij.kcm.psi.impl.KcmEntryImpl
 
 class KcmStructureViewFactory : PsiStructureViewFactory {
-    override fun getStructureViewBuilder(psiFile: PsiFile): StructureViewBuilder {
-        return object : TreeBasedStructureViewBuilder() {
-            override fun createStructureViewModel(editor: Editor?): StructureViewModel {
-                return KcmStructureViewModel(editor, psiFile)
-            }
+    override fun getStructureViewBuilder(psiFile: PsiFile) =
+        object : TreeBasedStructureViewBuilder() {
+            override fun createStructureViewModel(editor: Editor?) = createModel(psiFile, editor)
         }
-    }
 }
 
-class KcmStructureViewModel(editor: Editor?, psiFile: PsiFile) :
-    StructureViewModelBase(psiFile, editor, KcmStructureViewElement(psiFile)),
-    StructureViewModel.ElementInfoProvider {
-    override fun isAlwaysShowsPlus(element: StructureViewTreeElement?): Boolean = false
-    override fun isAlwaysLeaf(element: StructureViewTreeElement): Boolean = element.value is KcmEntry
-    override fun getSuitableClasses(): Array<Class<KcmEntry>> = arrayOf(KcmEntry::class.java)
+private fun createModel(psiFile: PsiFile, editor: Editor?): StructureViewModel {
+    return object : StructureViewModelBase(psiFile, editor, KcmStructureViewElement(psiFile)),
+        StructureViewModel.ElementInfoProvider {
+        override fun isAlwaysShowsPlus(element: StructureViewTreeElement?) = false
+        override fun isAlwaysLeaf(element: StructureViewTreeElement) = element.value is KcmEntry
+    }.withSuitableClasses(KcmEntry::class.java)
 }
 
 class KcmStructureViewElement(private val myElement: NavigatablePsiElement) : StructureViewTreeElement {
-    override fun getValue(): Any = myElement
+    override fun getValue() = myElement
     override fun navigate(requestFocus: Boolean) = myElement.navigate(requestFocus)
-    override fun canNavigate(): Boolean = myElement.canNavigate()
-    override fun canNavigateToSource(): Boolean = myElement.canNavigateToSource()
+    override fun canNavigate() = myElement.canNavigate()
+    override fun canNavigateToSource() = myElement.canNavigateToSource()
 
     override fun getPresentation(): ItemPresentation {
         return when (myElement) {
