@@ -8,7 +8,6 @@ import com.intellij.navigation.ItemPresentation
 import com.intellij.openapi.editor.Editor
 import com.intellij.psi.NavigatablePsiElement
 import com.intellij.psi.PsiFile
-import com.intellij.psi.util.PsiTreeUtil
 import ris58h.androidkeymaps.intellij.kl.psi.KlAxisEntry
 import ris58h.androidkeymaps.intellij.kl.psi.KlFile
 import ris58h.androidkeymaps.intellij.kl.psi.KlEntry
@@ -69,7 +68,7 @@ class KlStructureViewElement(private val myElement: NavigatablePsiElement) : Str
 
     override fun getChildren(): Array<TreeElement> {
         if (myElement is KlFile) {
-            return PsiTreeUtil.getChildrenOfTypeAsList(myElement, KlEntry::class.java)
+            return myElement.entries
                 .map { KlStructureViewElement(it as KlEntryImpl) }
                 .toTypedArray()
         }

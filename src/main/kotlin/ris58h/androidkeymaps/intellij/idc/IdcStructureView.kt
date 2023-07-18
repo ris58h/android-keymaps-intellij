@@ -8,7 +8,6 @@ import com.intellij.navigation.ItemPresentation
 import com.intellij.openapi.editor.Editor
 import com.intellij.psi.NavigatablePsiElement
 import com.intellij.psi.PsiFile
-import com.intellij.psi.util.PsiTreeUtil
 import ris58h.androidkeymaps.intellij.idc.psi.IdcFile
 import ris58h.androidkeymaps.intellij.idc.psi.IdcProperty
 import ris58h.androidkeymaps.intellij.idc.psi.impl.IdcPropertyImpl
@@ -46,7 +45,7 @@ class IdcStructureViewElement(private val myElement: NavigatablePsiElement) : St
 
     override fun getChildren(): Array<TreeElement> {
         if (myElement is IdcFile) {
-            return PsiTreeUtil.getChildrenOfTypeAsList(myElement, IdcProperty::class.java)
+            return myElement.properties
                 .map { IdcStructureViewElement(it as IdcPropertyImpl) }
                 .toTypedArray()
         }

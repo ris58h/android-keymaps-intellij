@@ -8,7 +8,6 @@ import com.intellij.navigation.ItemPresentation
 import com.intellij.openapi.editor.Editor
 import com.intellij.psi.NavigatablePsiElement
 import com.intellij.psi.PsiFile
-import com.intellij.psi.util.PsiTreeUtil
 import ris58h.androidkeymaps.intellij.kcm.psi.KcmFile
 import ris58h.androidkeymaps.intellij.kcm.psi.KcmEntry
 import ris58h.androidkeymaps.intellij.kcm.psi.KcmKeyEntry
@@ -54,7 +53,7 @@ class KcmStructureViewElement(private val myElement: NavigatablePsiElement) : St
 
     override fun getChildren(): Array<TreeElement> {
         if (myElement is KcmFile) {
-            return PsiTreeUtil.getChildrenOfTypeAsList(myElement, KcmEntry::class.java)
+            return myElement.entries
                 .filter { it !is KcmTypeEntry }
                 .map { KcmStructureViewElement(it as KcmEntryImpl) }
                 .toTypedArray()
